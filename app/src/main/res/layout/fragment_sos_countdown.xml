@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:fontFamily="@font/space_grotesk_bold"
+        android:gravity="center"
+        android:text="@string/sos_sending_in"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_headline_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Emergency Type Badge -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardEmergencyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        app:cardBackgroundColor="@color/primary_red_alpha_10"
+        app:cardCornerRadius="@dimen/radius_pill"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/spacing_md"
+            android:paddingVertical="@dimen/spacing_xs">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/primary_red" />
+
+            <TextView
+                android:id="@+id/tvEmergencyType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/primary_red"
+                android:textSize="@dimen/text_label_medium"
+                tools:text="Safety" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Countdown Container -->
+    <FrameLayout
+        android:id="@+id/countdownContainer"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toTopOf="@id/statusContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardEmergencyType"
+        app:layout_constraintVertical_bias="0.4">
+
+        <!-- Pulse Rings -->
+        <View
+            android:id="@+id/pulseRing2"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:alpha="0.3"
+            android:background="@drawable/bg_countdown_ring" />
+
+        <View
+            android:id="@+id/pulseRing1"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:alpha="0.5"
+            android:background="@drawable/bg_countdown_ring" />
+
+        <!-- Circular Progress -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/circularProgress"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:rotation="-90"
+            app:indicatorColor="@color/primary_red"
+            app:indicatorSize="200dp"
+            app:trackColor="@color/surface_elevated"
+            app:trackThickness="8dp" />
+
+        <!-- Center Content -->
+        <LinearLayout
+            android:id="@+id/sosIconContainer"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_circle_red"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCountdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:textColor="@color/white"
+                android:textSize="72sp"
+                tools:text="5" />
+
+        </LinearLayout>
+
+        <!-- Sending Progress -->
+        <ProgressBar
+            android:id="@+id/progressSending"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvCountdownLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/seconds_remaining"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_body_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/countdownContainer" />
+
+    <!-- Status Container -->
+    <LinearLayout
+        android:id="@+id/statusContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_xl"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/buttonsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Location Status -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/status_success" />
+
+            <TextView
+                android:id="@+id/tvLocationStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:drawablePadding="@dimen/spacing_xs"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/location_ready"
+                android:textColor="@color/status_success"
+                android:textSize="@dimen/text_label_medium" />
+
+        </LinearLayout>
+
+        <!-- Silent Mode Indicator -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSilentMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/warning_alpha_10"
+            app:cardCornerRadius="@dimen/radius_sm"
+            app:cardElevation="0dp"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/spacing_sm"
+                android:paddingVertical="@dimen/spacing_xs">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_home"
+                    app:tint="@color/status_warning" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/silent_mode"
+                    android:textColor="@color/status_warning"
+                    android:textSize="@dimen/text_label_small" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <!-- Buttons Container -->
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_lg"
+        android:layout_marginBottom="@dimen/spacing_xl"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Trigger Now Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTriggerNow"
+            style="@style/Widget.SafeGuard.Button.Primary.Danger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_large"
+            android:text="@string/send_now" />
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            style="@style/Widget.SafeGuard.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_large"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

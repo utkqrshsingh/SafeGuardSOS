@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Outer circle shadow -->
+    <path
+        android:pathData="M24,44c8,0 14,-6 14,-14 0,-8 -14,-26 -14,-26S10,22 10,30c0,8 6,14 14,14z"
+        android:fillColor="#40000000" />
+
+    <!-- Main marker -->
+    <path
+        android:pathData="M24,42c7,0 12,-5 12,-12 0,-7 -12,-24 -12,-24S12,23 12,30c0,7 5,12 12,12z"
+        android:fillColor="@color/sos_primary" />
+
+    <!-- Inner circle -->
+    <path
+        android:pathData="M24,30m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"
+        android:fillColor="@color/white" />
+
+    <!-- SOS text -->
+    <path
+        android:pathData="M21,30h6M24,27v6"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/sos_primary"
+        android:strokeLineCap="round" />
+</vector>

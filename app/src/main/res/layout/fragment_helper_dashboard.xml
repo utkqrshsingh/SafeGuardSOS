@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Helper Content -->
+            <LinearLayout
+                android:id="@+id/helperContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/spacing_xl">
+
+                <!-- Header -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/headerContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:text="@string/helper_dashboard"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_headline_medium"
+                        app:layout_constraintEnd_toStartOf="@id/btnSettings"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivVerifiedBadge"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/spacing_xs"
+                        android:src="@drawable/ic_verified"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                        app:layout_constraintStart_toEndOf="@id/tvTitle"
+                        app:layout_constraintTop_toTopOf="@id/tvTitle"
+                        app:tint="@color/status_success"
+                        tools:visibility="visible" />
+
+                    <ImageButton
+                        android:id="@+id/btnSettings"
+                        android:layout_width="@dimen/icon_button_size"
+                        android:layout_height="@dimen/icon_button_size"
+                        android:background="@drawable/bg_button_icon"
+                        android:contentDescription="@string/settings"
+                        android:src="@drawable/ic_settings"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/text_primary" />
+
+                    <!-- Location Status -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+                        <ImageView
+                            android:id="@+id/ivLocationStatus"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:src="@drawable/ic_location"
+                            app:tint="@color/status_success" />
+
+                        <TextView
+                            android:id="@+id/tvLocationStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_xs"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="@string/location_ready"
+                            android:textColor="@color/status_success"
+                            android:textSize="@dimen/text_label_small" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Helper Mode Toggle Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/radius_lg"
+                    app:cardElevation="@dimen/elevation_sm">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_md">
+
+                        <ImageView
+                            android:id="@+id/ivHelperIcon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_icon_circle_cyan"
+                            android:padding="@dimen/spacing_sm"
+                            android:src="@drawable/ic_helper"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/accent_cyan" />
+
+                        <TextView
+                            android:id="@+id/tvHelperModeLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="@string/helper_mode"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_title_medium"
+                            app:layout_constraintEnd_toStartOf="@id/switchHelperMode"
+                            app:layout_constraintStart_toEndOf="@id/ivHelperIcon"
+                            app:layout_constraintTop_toTopOf="@id/ivHelperIcon" />
+
+                        <TextView
+                            android:id="@+id/tvHelperModeStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="@string/helper_mode_inactive"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_label_medium"
+                            app:layout_constraintEnd_toStartOf="@id/switchHelperMode"
+                            app:layout_constraintStart_toEndOf="@id/ivHelperIcon"
+                            app:layout_constraintTop_toBottomOf="@id/tvHelperModeLabel" />
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchHelperMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Availability Status -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/status"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_title_small" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:orientation="horizontal">
+
+                    <!-- Online -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAvailabilityOnline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/radius_md"
+                        app:cardElevation="@dimen/elevation_sm"
+                        app:rippleColor="@color/ripple_light">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <View
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/bg_circle_green" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_xs"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/available"
+                                android:textColor="@color/status_success"
+                                android:textSize="@dimen/text_label_medium" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Busy -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAvailabilityBusy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/radius_md"
+                        app:cardElevation="@dimen/elevation_sm"
+                        app:rippleColor="@color/ripple_light">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <View
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/bg_dot" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_xs"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/busy"
+                                android:textColor="@color/status_warning"
+                                android:textSize="@dimen/text_label_medium" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Offline -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAvailabilityOffline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/radius_md"
+                        app:cardElevation="@dimen/elevation_sm"
+                        app:rippleColor="@color/ripple_light">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <View
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/bg_dot" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/spacing_xs"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="@string/offline"
+                                android:textColor="@color/text_tertiary"
+                                android:textSize="@dimen/text_label_medium" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Stats -->
+                <LinearLayout
+                    android:id="@+id/statsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:orientation="horizontal">
+
+                    <!-- People Helped -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/radius_md"
+                        app:cardElevation="@dimen/elevation_sm">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <TextView
+                                android:id="@+id/tvPeopleHelped"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                android:textColor="@color/status_success"
+                                android:textSize="@dimen/text_headline_medium"
+                                tools:text="12" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="@string/people_helped"
+                                android:textColor="@color/text_tertiary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Response Time -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/radius_md"
+                        app:cardElevation="@dimen/elevation_sm">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <TextView
+                                android:id="@+id/tvResponseTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                android:textColor="@color/accent_cyan"
+                                android:textSize="@dimen/text_headline_medium"
+                                tools:text="3m" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="@string/avg_response"
+                                android:textColor="@color/text_tertiary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Rating -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/radius_md"
+                        app:cardElevation="@dimen/elevation_sm">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/ic_home"
+                                    app:tint="@color/status_warning" />
+
+                                <TextView
+                                    android:id="@+id/tvRating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/spacing_xs"
+                                    android:fontFamily="@font/space_grotesk_bold"
+                                    android:textColor="@color/status_warning"
+                                    android:textSize="@dimen/text_title_medium"
+                                    tools:text="4.8" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvTotalResponses"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_regular"
+                                android:textColor="@color/text_tertiary"
+                                android:textSize="@dimen/text_label_small"
+                                tools:text="24 responses" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Active Response Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardActiveResponse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/status_success"
+                    app:cardCornerRadius="@dimen/radius_lg"
+                    app:cardElevation="@dimen/elevation_md"
+                    app:rippleColor="@color/white_alpha_20"
+                    tools:visibility="visible">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_md">
+
+                        <View
+                            android:id="@+id/activeResponseIndicator"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/bg_pulse_dot"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvActiveResponseLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="@string/you_are_responding"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_title_small"
+                            app:layout_constraintEnd_toStartOf="@id/tvActiveResponseTime"
+                            app:layout_constraintStart_toEndOf="@id/activeResponseIndicator"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvActiveResponseUser"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/white_alpha_60"
+                            android:textSize="@dimen/text_label_medium"
+                            app:layout_constraintEnd_toStartOf="@id/tvActiveResponseTime"
+                            app:layout_constraintStart_toEndOf="@id/activeResponseIndicator"
+                            app:layout_constraintTop_toBottomOf="@id/tvActiveResponseLabel"
+                            tools:text="Helping John Doe" />
+
+                        <TextView
+                            android:id="@+id/tvActiveResponseType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_sm"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/white_alpha_60"
+                            android:textSize="@dimen/text_label_small"
+                            app:layout_constraintEnd_toStartOf="@id/tvActiveResponseTime"
+                            app:layout_constraintStart_toEndOf="@id/activeResponseIndicator"
+                            app:layout_constraintTop_toBottomOf="@id/tvActiveResponseUser"
+                            tools:text="Safety Emergency" />
+
+                        <TextView
+                            android:id="@+id/tvActiveResponseTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/white_alpha_60"
+                            android:textSize="@dimen/text_label_medium"
+                            app:layout_constraintEnd_toStartOf="@id/ivActiveResponseArrow"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="5m ago" />
+
+                        <ImageView
+                            android:id="@+id/ivActiveResponseArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/white" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- History Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/radius_md"
+                    app:cardElevation="@dimen/elevation_sm"
+                    app:rippleColor="@color/ripple_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/spacing_md">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_history"
+                            app:tint="@color/text_secondary" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="@string/helper_history"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_title_small" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/text_tertiary" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Nearby Alerts Section -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_xl">
+
+                    <TextView
+                        android:id="@+id/tvNearbyAlertsTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:text="@string/nearby_alerts"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_title_medium"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/badgeAlertCount"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/badgeAlertCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/primary_red"
+                        app:cardCornerRadius="@dimen/radius_pill"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvNearbyAlertsTitle"
+                        app:layout_constraintStart_toEndOf="@id/tvNearbyAlertsTitle"
+                        app:layout_constraintTop_toTopOf="@id/tvNearbyAlertsTitle"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvAlertCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:minWidth="24dp"
+                            android:paddingHorizontal="@dimen/spacing_sm"
+                            android:paddingVertical="@dimen/spacing_xs"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_label_small"
+                            tools:text="3" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tvViewAllAlerts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:fontFamily="@font/inter_medium"
+                        android:padding="@dimen/spacing_xs"
+                        android:text="@string/see_all"
+                        android:textColor="@color/accent_cyan"
+                        android:textSize="@dimen/text_label_medium"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Alerts RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNearbyAlerts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_sos_history" />
+
+                <!-- Empty Alerts Container -->
+                <LinearLayout
+                    android:id="@+id/emptyAlertsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_lg"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_xl"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/ic_shield_check"
+                        app:tint="@color/text_tertiary" />
+
+                    <TextView
+                        android:id="@+id/tvEmptyMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center"
+                        android:text="@string/no_nearby_alerts"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="@dimen/text_body_medium" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Registration Prompt (Hidden when registered) -->
+            <LinearLayout
+                android:id="@+id/registrationPrompt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_xl"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_helper"
+                    app:tint="@color/accent_cyan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:fontFamily="@font/space_grotesk_bold"
+                    android:text="@string/become_a_helper"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_headline_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/spacing_xl"
+                    android:text="@string/become_helper_description"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_body_medium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegisterHelper"
+                    style="@style/SafeGuard.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xl"
+                    android:paddingHorizontal="@dimen/spacing_xl"
+                    android:text="@string/register_as_helper" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_sos"
+        android:shortcutId="sos_shortcut"
+        android:shortcutShortLabel="@string/sos"
+        android:shortcutLongLabel="@string/sos_button">
+        <intent
+            android:action="com.safeguard.sos.ACTION_SOS"
+            android:targetClass="com.safeguard.sos.presentation.main.MainActivity"
+            android:targetPackage="com.safeguard.sos" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_contacts"
+        android:shortcutId="contacts_shortcut"
+        android:shortcutShortLabel="@string/emergency_contacts"
+        android:shortcutLongLabel="@string/emergency_contacts">
+        <intent
+            android:action="com.safeguard.sos.ACTION_CONTACTS"
+            android:targetClass="com.safeguard.sos.presentation.main.MainActivity"
+            android:targetPackage="com.safeguard.sos" />
+    </shortcut>
+
+</shortcuts>

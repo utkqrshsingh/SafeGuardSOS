@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ==================== GENDER OPTIONS ==================== -->
+
+    <string-array name="gender_options">
+        <item>@string/male</item>
+        <item>@string/female</item>
+        <item>@string/other</item>
+        <item>@string/prefer_not_to_say</item>
+    </string-array>
+
+    <!-- ==================== BLOOD GROUPS ==================== -->
+
+    <string-array name="blood_groups">
+        <item>@string/blood_a_positive</item>
+        <item>@string/blood_a_negative</item>
+        <item>@string/blood_b_positive</item>
+        <item>@string/blood_b_negative</item>
+        <item>@string/blood_ab_positive</item>
+        <item>@string/blood_ab_negative</item>
+        <item>@string/blood_o_positive</item>
+        <item>@string/blood_o_negative</item>
+    </string-array>
+
+    <!-- ==================== RELATIONSHIPS ==================== -->
+
+    <string-array name="relationships">
+        <item>@string/relation_parent</item>
+        <item>@string/relation_spouse</item>
+        <item>@string/relation_sibling</item>
+        <item>@string/relation_child</item>
+        <item>@string/relation_friend</item>
+        <item>@string/relation_relative</item>
+        <item>@string/relation_colleague</item>
+        <item>@string/relation_other</item>
+    </string-array>
+
+    <!-- ==================== COUNTDOWN DURATIONS ==================== -->
+
+    <string-array name="countdown_durations">
+        <item>3 seconds</item>
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+    </string-array>
+
+    <integer-array name="countdown_duration_values">
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+    </integer-array>
+
+    <!-- ==================== HELPER RADIUS OPTIONS ==================== -->
+
+    <string-array name="helper_radius_options">
+        <item>5 km</item>
+        <item>10 km</item>
+        <item>15 km</item>
+        <item>20 km</item>
+    </string-array>
+
+    <integer-array name="helper_radius_values">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </integer-array>
+
+    <!-- ==================== THEME OPTIONS ==================== -->
+
+    <string-array name="theme_options">
+        <item>@string/theme_light</item>
+        <item>@string/theme_dark</item>
+        <item>@string/theme_system</item>
+    </string-array>
+
+    <!-- ==================== LANGUAGE OPTIONS ==================== -->
+
+    <string-array name="language_options">
+        <item>English</item>
+        <item>हिंदी (Hindi)</item>
+        <item>தமிழ் (Tamil)</item>
+        <item>తెలుగు (Telugu)</item>
+        <item>ಕನ್ನಡ (Kannada)</item>
+        <item>മലയാളം (Malayalam)</item>
+        <item>मराठी (Marathi)</item>
+        <item>বাংলা (Bengali)</item>
+        <item>ગુજરાતી (Gujarati)</item>
+        <item>ਪੰਜਾਬੀ (Punjabi)</item>
+    </string-array>
+
+    <string-array name="language_codes">
+        <item>en</item>
+        <item>hi</item>
+        <item>ta</item>
+        <item>te</item>
+        <item>kn</item>
+        <item>ml</item>
+        <item>mr</item>
+        <item>bn</item>
+        <item>gu</item>
+        <item>pa</item>
+    </string-array>
+
+    <!-- ==================== ONBOARDING PAGES ==================== -->
+
+    <string-array name="onboarding_titles">
+        <item>@string/onboarding_welcome_title</item>
+        <item>@string/onboarding_sos_title</item>
+        <item>@string/onboarding_helpers_title</item>
+        <item>@string/onboarding_tracking_title</item>
+        <item>@string/onboarding_verification_title</item>
+    </string-array>
+
+    <string-array name="onboarding_descriptions">
+        <item>@string/onboarding_welcome_description</item>
+        <item>@string/onboarding_sos_description</item>
+        <item>@string/onboarding_helpers_description</item>
+        <item>@string/onboarding_tracking_description</item>
+        <item>@string/onboarding_verification_description</item>
+    </string-array>
+
+    <!-- ==================== SOS STATUS ==================== -->
+
+    <string-array name="sos_status_labels">
+        <item>@string/status_pending</item>
+        <item>@string/status_active</item>
+        <item>@string/status_responded</item>
+        <item>@string/status_resolved</item>
+        <item>@string/status_cancelled</item>
+        <item>@string/status_false_alarm</item>
+    </string-array>
+
+    <!-- ==================== EMERGENCY SERVICES ==================== -->
+
+    <string-array name="emergency_services">
+        <item>Police - 100</item>
+        <item>Ambulance - 102</item>
+        <item>Fire - 101</item>
+        <item>Women Helpline - 1091</item>
+        <item>Child Helpline - 1098</item>
+        <item>Emergency - 112</item>
+    </string-array>
+
+    <string-array name="emergency_numbers">
+        <item>100</item>
+        <item>102</item>
+        <item>101</item>
+        <item>1091</item>
+        <item>1098</item>
+        <item>112</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ==================== SOS BUTTON ATTRIBUTES ==================== -->
+
+    <declare-styleable name="SOSButton">
+        <attr name="sosButtonSize" format="dimension" />
+        <attr name="sosButtonColor" format="color" />
+        <attr name="sosButtonPressedColor" format="color" />
+        <attr name="sosButtonBorderWidth" format="dimension" />
+        <attr name="sosButtonBorderColor" format="color" />
+        <attr name="sosButtonIconSize" format="dimension" />
+        <attr name="sosButtonIcon" format="reference" />
+        <attr name="sosButtonText" format="string" />
+        <attr name="sosButtonTextSize" format="dimension" />
+        <attr name="sosButtonTextColor" format="color" />
+        <attr name="sosButtonPulseEnabled" format="boolean" />
+        <attr name="sosButtonPulseColor" format="color" />
+        <attr name="sosButtonRippleEnabled" format="boolean" />
+    </declare-styleable>
+
+    <!-- ==================== PULSE ANIMATION VIEW ==================== -->
+
+    <declare-styleable name="PulseAnimationView">
+        <attr name="pulseColor" format="color" />
+        <attr name="pulseCount" format="integer" />
+        <attr name="pulseDuration" format="integer" />
+        <attr name="pulseStartDelay" format="integer" />
+        <attr name="pulseMaxScale" format="float" />
+        <attr name="pulseMinAlpha" format="float" />
+        <attr name="pulseRepeat" format="boolean" />
+    </declare-styleable>
+
+    <!-- ==================== RIPPLE BACKGROUND VIEW ==================== -->
+
+    <declare-styleable name="RippleBackgroundView">
+        <attr name="rippleColor" format="color" />
+        <attr name="rippleStrokeWidth" format="dimension" />
+        <attr name="rippleRadius" format="dimension" />
+        <attr name="rippleCount" format="integer" />
+        <attr name="rippleDuration" format="integer" />
+        <attr name="rippleDelay" format="integer" />
+    </declare-styleable>
+
+    <!-- ==================== CIRCULAR COUNTDOWN VIEW ==================== -->
+
+    <declare-styleable name="CircularCountdownView">
+        <attr name="countdownDuration" format="integer" />
+        <attr name="countdownStrokeWidth" format="dimension" />
+        <attr name="countdownProgressColor" format="color" />
+        <attr name="countdownBackgroundColor" format="color" />
+        <attr name="countdownTextColor" format="color" />
+        <attr name="countdownTextSize" format="dimension" />
+        <attr name="countdownStartAngle" format="float" />
+        <attr name="countdownDirection">
+            <enum name="clockwise" value="0" />
+            <enum name="counterClockwise" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- ==================== OTP INPUT VIEW ==================== -->
+
+    <declare-styleable name="OtpInputView">
+        <attr name="otpLength" format="integer" />
+        <attr name="otpBoxWidth" format="dimension" />
+        <attr name="otpBoxHeight" format="dimension" />
+        <attr name="otpBoxSpacing" format="dimension" />
+        <attr name="otpBoxBackground" format="reference" />
+        <attr name="otpBoxBackgroundFocused" format="reference" />
+        <attr name="otpBoxBackgroundFilled" format="reference" />
+        <attr name="otpBoxBackgroundError" format="reference" />
+        <attr name="otpTextColor" format="color" />
+        <attr name="otpTextSize" format="dimension" />
+        <attr name="otpCursorColor" format="color" />
+        <attr name="otpMaskCharacter" format="string" />
+        <attr name="otpMaskEnabled" format="boolean" />
+    </declare-styleable>
+
+    <!-- ==================== STATUS BADGE VIEW ==================== -->
+
+    <declare-styleable name="StatusBadgeView">
+        <attr name="badgeText" format="string" />
+        <attr name="badgeTextColor" format="color" />
+        <attr name="badgeTextSize" format="dimension" />
+        <attr name="badgeBackgroundColor" format="color" />
+        <attr name="badgeCornerRadius" format="dimension" />
+        <attr name="badgeIcon" format="reference" />
+        <attr name="badgeIconTint" format="color" />
+        <attr name="badgeIconSize" format="dimension" />
+        <attr name="badgePaddingHorizontal" format="dimension" />
+        <attr name="badgePaddingVertical" format="dimension" />
+        <attr name="badgeStatus">
+            <enum name="success" value="0" />
+            <enum name="warning" value="1" />
+            <enum name="error" value="2" />
+            <enum name="info" value="3" />
+            <enum name="pending" value="4" />
+            <enum name="neutral" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <!-- ==================== VERIFICATION STATUS VIEW ==================== -->
+
+    <declare-styleable name="VerificationStatusView">
+        <attr name="verificationStatus">
+            <enum name="unverified" value="0" />
+            <enum name="pending" value="1" />
+            <enum name="verified" value="2" />
+            <enum name="failed" value="3" />
+        </attr>
+        <attr name="showLabel" format="boolean" />
+        <attr name="verifiedLabel" format="string" />
+        <attr name="unverifiedLabel" format="string" />
+        <attr name="pendingLabel" format="string" />
+        <attr name="failedLabel" format="string" />
+        <attr name="iconSize" format="dimension" />
+    </declare-styleable>
+
+    <!-- ==================== HELPER AVAILABILITY TOGGLE ==================== -->
+
+    <declare-styleable name="HelperToggle">
+        <attr name="toggleActiveColor" format="color" />
+        <attr name="toggleInactiveColor" format="color" />
+        <attr name="toggleActiveText" format="string" />
+        <attr name="toggleInactiveText" format="string" />
+        <attr name="toggleAnimationDuration" format="integer" />
+    </declare-styleable>
+
+    <!-- ==================== DISTANCE INDICATOR VIEW ==================== -->
+
+    <declare-styleable name="DistanceIndicatorView">
+        <attr name="distanceValue" format="float" />
+        <attr name="distanceUnit">
+            <enum name="meters" value="0" />
+            <enum name="kilometers" value="1" />
+            <enum name="miles" value="2" />
+        </attr>
+        <attr name="distanceTextColor" format="color" />
+        <attr name="distanceIconColor" format="color" />
+        <attr name="distanceIcon" format="reference" />
+    </declare-styleable>
+
+    <!-- ==================== EMERGENCY LEVEL INDICATOR ==================== -->
+
+    <declare-styleable name="EmergencyLevelIndicator">
+        <attr name="emergencyLevel">
+            <enum name="low" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="high" value="2" />
+            <enum name="critical" value="3" />
+        </attr>
+        <attr name="animatePulse" format="boolean" />
+    </declare-styleable>
+
+    <!-- ==================== CUSTOM TOOLBAR ==================== -->
+
+    <declare-styleable name="SafeGuardToolbar">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="toolbarSubtitle" format="string" />
+        <attr name="showBackButton" format="boolean" />
+        <attr name="showLogo" format="boolean" />
+        <attr name="transparentBackground" format="boolean" />
+    </declare-styleable>
+
+    <!-- ==================== COMMON ATTRIBUTES ==================== -->
+
+    <attr name="cornerRadius" format="dimension" />
+    <attr name="elevation" format="dimension" />
+    <attr name="strokeWidth" format="dimension" />
+    <attr name="strokeColor" format="color" />
+
+</resources>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ==================== PRIMARY COLORS ==================== -->
+
+    <!-- Background Colors -->
+    <color name="background_primary">#0D0D0D</color>
+    <color name="background_secondary">#121212</color>
+    <color name="background_tertiary">#1A1A1A</color>
+
+    <color name="background">@color/background_primary</color>
+
+    <!-- Surface Colors -->
+    <color name="surface">#1A1A2E</color>
+    <color name="surface_primary">#1A1A2E</color>
+    <color name="surface_secondary">#16213E</color>
+    <color name="surface_tertiary">#0F3460</color>
+    <color name="surface_elevated">#252542</color>
+    <color name="surface_dark">#121212</color>
+
+    <color name="surface_light">@color/surface_elevated</color>
+
+    <!-- Card Colors -->
+    <color name="card_background">#1E1E2E</color>
+    <color name="card_background_elevated">#252538</color>
+    <color name="card_border">#2A2A3E</color>
+
+    <!-- ==================== ACCENT COLORS ==================== -->
+
+    <!-- Primary Accent - Cyan/Blue -->
+    <color name="accent">#00D9FF</color>
+    <color name="accent_cyan">#00D9FF</color>
+    <color name="accent_primary">#00D9FF</color>
+    <color name="accent_primary_variant">#00B4D8</color>
+    <color name="accent_primary_dark">#0096C7</color>
+    <color name="accent_primary_light">#48CAE4</color>
+
+    <!-- Standard Aliases -->
+    <color name="primary">@color/accent</color>
+    <color name="primary_variant">@color/accent_primary_variant</color>
+
+    <!-- Secondary Accent - Purple -->
+    <color name="accent_secondary">#7B68EE</color>
+    <color name="accent_secondary_variant">#6C5CE7</color>
+    <color name="accent_secondary_dark">#5B4FCF</color>
+
+    <color name="secondary">@color/accent_secondary</color>
+    <color name="secondary_variant">@color/accent_secondary_variant</color>
+    <color name="purple">@color/accent_secondary</color>
+
+    <!-- ==================== EMERGENCY/SOS COLORS ==================== -->
+
+    <!-- SOS Red -->
+    <color name="sos_primary">#FF6B6B</color>
+    <color name="sos_secondary">#E94560</color>
+    <color name="primary_red">#E94560</color>
+    <color name="sos_dark">#C73E54</color>
+    <color name="sos_light">#FF8585</color>
+    <color name="sos_background">#2D1F1F</color>
+    <color name="sos_ripple">#40FF6B6B</color>
+
+    <!-- Emergency Alert -->
+    <color name="emergency_red">#FF5252</color>
+    <color name="emergency_red_dark">#D32F2F</color>
+    <color name="emergency_orange">#FF6D00</color>
+    <color name="emergency_background">#1F1215</color>
+
+    <color name="emergency">@color/emergency_red</color>
+
+    <!-- ==================== STATUS COLORS ==================== -->
+
+    <!-- Success -->
+    <color name="success">#00C853</color>
+    <color name="status_success">#00C853</color>
+    <color name="status_success_dark">#00A344</color>
+    <color name="status_success_light">#69F0AE</color>
+    <color name="status_success_background">#0D2818</color>
+
+    <color name="success_alpha_20">#3300C853</color>
+    <color name="success_green">#00C853</color>
+
+    <!-- Warning -->
+    <color name="status_warning">#FFD600</color>
+    <color name="status_warning_dark">#FFAB00</color>
+    <color name="status_warning_light">#FFFF00</color>
+    <color name="status_warning_background">#2D2A0D</color>
+
+    <color name="warning">@color/status_warning</color>
+    <color name="warning_alpha_10">#1AFFD600</color>
+
+    <!-- Error -->
+    <color name="error">#FF5252</color>
+    <color name="status_error">#FF5252</color>
+    <color name="status_error_dark">#D32F2F</color>
+    <color name="status_error_light">#FF8A80</color>
+    <color name="status_error_background">#2D1515</color>
+
+    <color name="error_alpha_10">#1AFF5252</color>
+    <color name="error_alpha_80">#CCFF5252</color>
+
+    <!-- Info -->
+    <color name="status_info">#536DFE</color>
+    <color name="status_info_dark">#3D5AFE</color>
+    <color name="status_info_light">#8C9EFF</color>
+    <color name="status_info_background">#151A2D</color>
+
+    <color name="info">@color/status_info</color>
+    <color name="info_alpha_10">#1A536DFE</color>
+
+    <!-- Pending -->
+    <color name="status_pending">#FFA726</color>
+    <color name="status_pending_background">#2D200D</color>
+
+    <!-- ==================== TEXT COLORS ==================== -->
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="text_tertiary">#808080</color>
+    <color name="text_disabled">#4D4D4D</color>
+    <color name="text_hint">#666666</color>
+    <color name="text_on_primary">#0D0D0D</color>
+    <color name="text_on_sos">#FFFFFF</color>
+    <color name="text_link">#00D9FF</color>
+    <color name="text_error">#FF5252</color>
+    <color name="text_success">#00C853</color>
+
+    <!-- ==================== ICON COLORS ==================== -->
+
+    <color name="icon_primary">#FFFFFF</color>
+    <color name="icon_secondary">#B3B3B3</color>
+    <color name="icon_tertiary">#666666</color>
+    <color name="icon_accent">#00D9FF</color>
+    <color name="icon_sos">#FF6B6B</color>
+    <color name="icon_success">#00C853</color>
+    <color name="icon_warning">#FFD600</color>
+    <color name="icon_error">#FF5252</color>
+
+    <!-- ==================== INPUT FIELD COLORS ==================== -->
+
+    <color name="input_background">#1A1A2E</color>
+    <color name="input_background_focused">#252542</color>
+    <color name="input_border">#2A2A3E</color>
+    <color name="input_border_focused">#00D9FF</color>
+    <color name="input_border_error">#FF5252</color>
+    <color name="input_border_success">#00C853</color>
+    <color name="input_hint">#666666</color>
+    <color name="input_text">#FFFFFF</color>
+    <color name="input_cursor">#00D9FF</color>
+
+    <color name="input_field_color">@color/input_border</color>
+    <color name="input_stroke_color">@color/input_border</color>
+
+    <!-- ==================== BUTTON COLORS ==================== -->
+
+    <!-- Primary Button -->
+    <color name="button_primary">#00D9FF</color>
+    <color name="button_primary_pressed">#00B4D8</color>
+    <color name="button_primary_disabled">#1A3A4D</color>
+    <color name="button_primary_text">#0D0D0D</color>
+    <color name="button_primary_text_disabled">#4D4D4D</color>
+
+    <!-- Secondary Button -->
+    <color name="button_secondary">#1A1A2E</color>
+    <color name="button_secondary_pressed">#252542</color>
+    <color name="button_secondary_border">#00D9FF</color>
+    <color name="button_secondary_text">#00D9FF</color>
+
+    <!-- SOS Button -->
+    <color name="button_sos">#FF6B6B</color>
+    <color name="button_sos_pressed">#E94560</color>
+    <color name="button_sos_text">#FFFFFF</color>
+
+    <!-- Danger Button -->
+    <color name="button_danger">#FF5252</color>
+    <color name="button_danger_pressed">#D32F2F</color>
+
+    <!-- ==================== NAVIGATION COLORS ==================== -->
+
+    <color name="nav_background">#0D0D0D</color>
+    <color name="nav_selected">#00D9FF</color>
+    <color name="nav_unselected">#666666</color>
+    <color name="nav_indicator">#1A3A4D</color>
+
+    <!-- ==================== DIVIDER & BORDER COLORS ==================== -->
+
+    <color name="divider">#2A2A3E</color>
+    <color name="divider_light">#1A1A2E</color>
+    <color name="border">#2A2A3E</color>
+    <color name="border_light">#1E1E2E</color>
+
+    <color name="stroke">@color/border</color>
+
+    <!-- ==================== SHIMMER COLORS ==================== -->
+
+    <color name="shimmer_base">#1A1A2E</color>
+    <color name="shimmer_highlight">#252542</color>
+
+    <!-- ==================== OVERLAY COLORS ==================== -->
+
+    <color name="overlay_dark">#CC000000</color>
+    <color name="overlay_medium">#80000000</color>
+    <color name="overlay_light">#40000000</color>
+    <color name="background_overlay">#80000000</color>
+    <color name="scrim">#99000000</color>
+
+    <!-- ==================== GRADIENT COLORS ==================== -->
+
+    <!-- Primary Gradient -->
+    <color name="gradient_primary_start">#00D9FF</color>
+    <color name="gradient_primary_end">#00B4D8</color>
+
+    <!-- Dark Gradient -->
+    <color name="gradient_dark_start">#1A1A2E</color>
+    <color name="gradient_dark_center">#16213E</color>
+    <color name="gradient_dark_end">#0F3460</color>
+
+    <!-- Emergency Gradient -->
+    <color name="gradient_emergency_start">#FF6B6B</color>
+    <color name="gradient_emergency_end">#E94560</color>
+
+    <!-- Security Gradient -->
+    <color name="gradient_security_start">#0F3460</color>
+    <color name="gradient_security_end">#16213E</color>
+
+    <!-- ==================== HELPER/RESPONDER COLORS ==================== -->
+
+    <color name="helper_active">#00C853</color>
+    <color name="helper_inactive">#666666</color>
+    <color name="helper_responding">#FFA726</color>
+    <color name="helper_arrived">#00D9FF</color>
+
+    <!-- ==================== MAP COLORS ==================== -->
+
+    <color name="map_radius_fill">#2000D9FF</color>
+    <color name="map_radius_stroke">#00D9FF</color>
+    <color name="map_marker_user">#00D9FF</color>
+    <color name="map_marker_helper">#00C853</color>
+    <color name="map_marker_sos">#FF6B6B</color>
+    <color name="map_route">#00D9FF</color>
+
+    <!-- ==================== VERIFICATION STATUS COLORS ==================== -->
+
+    <color name="verification_pending">#FFA726</color>
+    <color name="verification_verified">#00C853</color>
+    <color name="verification_failed">#FF5252</color>
+    <color name="verification_unverified">#666666</color>
+
+    <!-- ==================== AADHAAR VERIFICATION ==================== -->
+
+    <color name="aadhaar_brand">#E35A27</color>
+    <color name="aadhaar_background">#2D1D15</color>
+
+    <!-- ==================== MISC COLORS ==================== -->
+
+    <color name="ripple_light">#20FFFFFF</color>
+    <color name="ripple_dark">#20000000</color>
+    <color name="ripple_accent">#3000D9FF</color>
+    <color name="ripple_sos">#40FF6B6B</color>
+    <color name="ripple_color">#20FFFFFF</color>
+
+    <color name="pulse_animation">#00D9FF</color>
+    <color name="pulse_sos">#FF6B6B</color>
+
+    <color name="badge_background">#E94560</color>
+    <color name="badge_text">#FFFFFF</color>
+
+    <color name="switch_track_on">#00D9FF</color>
+    <color name="switch_track_off">#666666</color>
+    <color name="switch_thumb_on">#FFFFFF</color>
+    <color name="switch_thumb_off">#B3B3B3</color>
+
+    <color name="switch_track_color_light">#4000D9FF</color>
+
+    <color name="progress_background">#2A2A3E</color>
+    <color name="progress_primary">#00D9FF</color>
+    <color name="progress_sos">#FF6B6B</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_alpha_10">#1AFFFFFF</color>
+    <color name="white_alpha_20">#33FFFFFF</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
+    <color name="white_alpha_80">#CCFFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Alpha variants -->
+    <color name="accent_cyan_alpha_10">#1A00D9FF</color>
+    <color name="accent_cyan_alpha_20">#3300D9FF</color>
+    <color name="primary_red_alpha_10">#1AE94560</color>
+    <color name="primary_red_alpha_20">#33E94560</color>
+    <color name="success_alpha_10">#1A00C853</color>
+
+    <!-- On-color variants -->
+    <color name="on_warning">#1A1A2E</color>
+
+    <!-- Tab text colors -->
+    <color name="tab_text_selected">@color/white</color>
+    <color name="tab_text_unselected">@color/text_secondary</color>
+
+    <!-- Avatar Colors -->
+    <color name="avatar_color_1">#E91E63</color>
+    <color name="avatar_color_2">#9C27B0</color>
+    <color name="avatar_color_3">#673AB7</color>
+    <color name="avatar_color_4">#3F51B5</color>
+    <color name="avatar_color_5">#2196F3</color>
+
+    <!-- Additional Colors -->
+    <color name="accent_light">#1A00D9FF</color>
+    <color name="surface_helper">#1A4CAF50</color>
+    <color name="info_background">#1A536DFE</color>
+    <color name="chip_background">#2A2A3E</color>
+    <color name="info_alpha_20">#332196F3</color>
+    <color name="ic_launcher_background">#0D0D0D</color>
+
+
+
+</resources>

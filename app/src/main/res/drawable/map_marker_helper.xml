@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Outer circle shadow -->
+    <path
+        android:pathData="M24,44c8,0 14,-6 14,-14 0,-8 -14,-26 -14,-26S10,22 10,30c0,8 6,14 14,14z"
+        android:fillColor="#40000000" />
+
+    <!-- Main marker -->
+    <path
+        android:pathData="M24,42c7,0 12,-5 12,-12 0,-7 -12,-24 -12,-24S12,23 12,30c0,7 5,12 12,12z"
+        android:fillColor="@color/status_success" />
+
+    <!-- Inner circle -->
+    <path
+        android:pathData="M24,30m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"
+        android:fillColor="@color/white" />
+
+    <!-- Helper icon (person with plus) -->
+    <path
+        android:pathData="M24,28a2,2 0,1 0,0 -4,2 2,0 0,0 0,4zM21,34v-1.5c0,-1.1 0.9,-2 2,-2h2c1.1,0 2,0.9 2,2V34"
+        android:strokeWidth="1.5"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/status_success"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

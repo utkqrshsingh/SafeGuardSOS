@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/fragment_user_type_selection.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:padding="@dimen/spacing_sm"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary" />
+
+    <!-- Step Indicator -->
+    <LinearLayout
+        android:id="@+id/step_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_completed" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_active" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_inactive" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_step_inactive" />
+
+    </LinearLayout>
+
+    <!-- ScrollView for content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/btn_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_indicator">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_lg"
+            android:paddingTop="@dimen/spacing_xl"
+            android:paddingBottom="@dimen/spacing_md">
+
+            <!-- Shield Icon -->
+            <ImageView
+                android:id="@+id/iv_shield_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_shield"
+                app:tint="@color/accent" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:gravity="center"
+                android:text="@string/how_would_you_like_to_use"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_heading" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="@string/choose_your_role"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body" />
+
+            <!-- User Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_user_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_light"
+                app:strokeWidth="@dimen/card_stroke_unselected">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Icon Container -->
+                    <FrameLayout
+                        android:id="@+id/fl_user_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_container_blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_person"
+                            app:tint="@color/accent" />
+
+                    </FrameLayout>
+
+                    <!-- Check Icon -->
+                    <ImageView
+                        android:id="@+id/iv_check_user"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_check_circle"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/accent"
+                        tools:visibility="visible" />
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tv_user_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:text="@string/user_type_user"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_subtitle"
+                        app:layout_constraintEnd_toStartOf="@id/iv_check_user"
+                        app:layout_constraintStart_toEndOf="@id/fl_user_icon"
+                        app:layout_constraintTop_toTopOf="@id/fl_user_icon" />
+
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/tv_user_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/user_type_user_desc"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_caption"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/fl_user_icon"
+                        app:layout_constraintTop_toBottomOf="@id/tv_user_title" />
+
+                    <!-- Features -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_user_desc">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_send_sos"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_manage_contacts"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_track_help"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Helper Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_helper_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_light"
+                app:strokeWidth="@dimen/card_stroke_unselected">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Icon Container -->
+                    <FrameLayout
+                        android:id="@+id/fl_helper_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_container_green"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_helper"
+                            app:tint="@color/success" />
+
+                    </FrameLayout>
+
+                    <!-- Check Icon -->
+                    <ImageView
+                        android:id="@+id/iv_check_helper"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_check_circle"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/accent"
+                        tools:visibility="gone" />
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tv_helper_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:text="@string/user_type_helper"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_subtitle"
+                        app:layout_constraintEnd_toStartOf="@id/iv_check_helper"
+                        app:layout_constraintStart_toEndOf="@id/fl_helper_icon"
+                        app:layout_constraintTop_toTopOf="@id/fl_helper_icon" />
+
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/tv_helper_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/user_type_helper_desc"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_caption"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/fl_helper_icon"
+                        app:layout_constraintTop_toBottomOf="@id/tv_helper_title" />
+
+                    <!-- Features -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_helper_desc">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_receive_alerts"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_navigate_victim"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_help_community"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Both Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_both_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_light"
+                app:strokeWidth="@dimen/card_stroke_unselected">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Icon Container -->
+                    <FrameLayout
+                        android:id="@+id/fl_both_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_container_purple"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_shield_check"
+                            app:tint="@color/purple" />
+
+                    </FrameLayout>
+
+                    <!-- Recommended Badge -->
+                    <TextView
+                        android:id="@+id/tv_recommended"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_badge_recommended"
+                        android:fontFamily="@font/inter_semibold"
+                        android:paddingHorizontal="@dimen/spacing_sm"
+                        android:paddingVertical="2dp"
+                        android:text="@string/recommended"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_tiny"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Check Icon -->
+                    <ImageView
+                        android:id="@+id/iv_check_both"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_check_circle"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_recommended"
+                        app:tint="@color/accent"
+                        tools:visibility="gone" />
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tv_both_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginEnd="@dimen/spacing_sm"
+                        android:fontFamily="@font/space_grotesk_bold"
+                        android:text="@string/user_type_both"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_subtitle"
+                        app:layout_constraintEnd_toStartOf="@id/iv_check_both"
+                        app:layout_constraintStart_toEndOf="@id/fl_both_icon"
+                        app:layout_constraintTop_toTopOf="@id/fl_both_icon" />
+
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/tv_both_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/user_type_both_desc"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_caption"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/fl_both_icon"
+                        app:layout_constraintTop_toBottomOf="@id/tv_both_title" />
+
+                    <!-- Features -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_both_desc">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_all_user_features"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_all_helper_features"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:drawablePadding="@dimen/spacing_sm"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/feature_priority_support"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="@dimen/text_small"
+                            app:drawableStartCompat="@drawable/ic_check_small"
+                            app:drawableTint="@color/success" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Continue Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginHorizontal="@dimen/spacing_lg"
+        android:layout_marginBottom="@dimen/spacing_lg"
+        android:alpha="0.5"
+        android:enabled="false"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/continue_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_button"
+        app:backgroundTint="@color/accent"
+        app:cornerRadius="@dimen/radius_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

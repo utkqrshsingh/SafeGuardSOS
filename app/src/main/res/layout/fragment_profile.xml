@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_primary"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Profile"
+            app:titleTextColor="@color/text_primary"
+            app:titleTextAppearance="@style/SafeGuard.TextAppearance.TitleLarge"
+            app:menu="@menu/menu_profile" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+
+                <!-- Profile Header Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_lg"
+                    app:cardElevation="4dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_lg">
+
+                        <!-- Profile Image -->
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imageProfile"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_person"
+                            android:background="@drawable/bg_circle_avatar"
+                            app:shapeAppearanceOverlay="@style/SafeGuard.ShapeAppearance.LargeComponent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!-- User Type Badge -->
+                        <TextView
+                            android:id="@+id/badgeUserType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/spacing_sm"
+                            android:paddingVertical="@dimen/spacing_xxs"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_label_small"
+                            android:fontFamily="@font/inter_semibold"
+                            android:background="@drawable/bg_badge_user"
+                            app:layout_constraintTop_toTopOf="@id/imageProfile"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:text="User" />
+
+                        <!-- User Name -->
+                        <TextView
+                            android:id="@+id/textUserName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_marginEnd="@dimen/spacing_md"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_title_large"
+                            android:fontFamily="@font/inter_bold"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            app:layout_constraintStart_toEndOf="@id/imageProfile"
+                            app:layout_constraintEnd_toStartOf="@id/badgeUserType"
+                            app:layout_constraintTop_toTopOf="@id/imageProfile"
+                            tools:text="John Doe" />
+
+                        <!-- User Phone -->
+                        <TextView
+                            android:id="@+id/textUserPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_marginTop="@dimen/spacing_xxs"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body_medium"
+                            android:drawablePadding="@dimen/spacing_xs"
+                            app:drawableStartCompat="@drawable/ic_phone"
+                            app:drawableTint="@color/text_secondary"
+                            app:layout_constraintStart_toEndOf="@id/imageProfile"
+                            app:layout_constraintTop_toBottomOf="@id/textUserName"
+                            tools:text="+91 98765 43210" />
+
+                        <!-- User Email -->
+                        <TextView
+                            android:id="@+id/textUserEmail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:layout_marginTop="@dimen/spacing_xxs"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body_medium"
+                            android:drawablePadding="@dimen/spacing_xs"
+                            app:drawableStartCompat="@drawable/ic_email"
+                            app:drawableTint="@color/text_secondary"
+                            app:layout_constraintStart_toEndOf="@id/imageProfile"
+                            app:layout_constraintTop_toBottomOf="@id/textUserPhone"
+                            tools:text="john@email.com" />
+
+                        <!-- Edit Profile Button -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonEditProfile"
+                            style="@style/SafeGuard.Button.Outlined"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_md"
+                            android:text="Edit Profile"
+                            android:textColor="@color/accent"
+                            app:icon="@drawable/ic_edit"
+                            app:iconTint="@color/accent"
+                            app:strokeColor="@color/accent"
+                            app:layout_constraintTop_toBottomOf="@id/textUserEmail" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stats Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <!-- Emergency Contacts Stat -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardEmergencyContacts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/spacing_xs"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/corner_radius_md"
+                        app:cardElevation="2dp"
+                        app:rippleColor="@color/ripple_color">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <TextView
+                                android:id="@+id/textContactCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/accent"
+                                android:textSize="@dimen/text_headline_medium"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                tools:text="3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Contacts"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- SOS Count Stat -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardSOSHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="@dimen/spacing_xs"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/corner_radius_md"
+                        app:cardElevation="2dp"
+                        app:rippleColor="@color/ripple_color">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <TextView
+                                android:id="@+id/textSOSCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/primary_red"
+                                android:textSize="@dimen/text_headline_medium"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                tools:text="0" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SOS Alerts"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Member Since -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/spacing_xs"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="@dimen/corner_radius_md"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/spacing_md">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_calendar"
+                                app:tint="@color/status_success" />
+
+                            <TextView
+                                android:id="@+id/textMemberSince"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small"
+                                android:gravity="center"
+                                tools:text="March 2024" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Helper Stats Card (Visible only for Helpers) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHelperStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/surface_helper"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="2dp"
+                    app:rippleColor="@color/ripple_color"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/spacing_md"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_helper"
+                            android:background="@drawable/bg_circle_helper"
+                            android:padding="@dimen/spacing_sm"
+                            app:tint="@color/white" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Helper Dashboard"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_body_large"
+                                android:fontFamily="@font/inter_semibold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="View your helper stats and history"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/textHelpsProvided"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/status_success"
+                                android:textSize="@dimen/text_headline_small"
+                                android:fontFamily="@font/space_grotesk_bold"
+                                tools:text="12" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Helps"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="@dimen/spacing_sm"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/text_tertiary" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Verification Status Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardVerification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="2dp"
+                    app:rippleColor="@color/ripple_color">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/spacing_md"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/iconVerification"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_verified"
+                            android:padding="@dimen/spacing_xs" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textVerificationStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/status_success"
+                                android:textSize="@dimen/text_body_large"
+                                android:fontFamily="@font/inter_semibold"
+                                tools:text="Verified" />
+
+                            <TextView
+                                android:id="@+id/textVerificationHint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small"
+                                tools:text="Your identity has been verified" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/text_tertiary" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Quick Actions Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:text="Quick Actions"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_title_small"
+                    android:fontFamily="@font/inter_semibold" />
+
+                <!-- Edit Profile Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="2dp"
+                    app:rippleColor="@color/ripple_color">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/spacing_md"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_edit"
+                            app:tint="@color/accent" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:text="Edit Profile"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_body_large"
+                            android:fontFamily="@font/inter_medium" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/text_tertiary" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Medical Info Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardMedicalInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="@dimen/corner_radius_md"
+                    app:cardElevation="2dp"
+                    app:rippleColor="@color/ripple_color">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/spacing_md"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_medical"
+                            app:tint="@color/primary_red" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Medical Information"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_body_large"
+                                android:fontFamily="@font/inter_medium" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Blood group, allergies, medications"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_label_small" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/text_tertiary" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Spacer -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!-- Logout Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonLogout"
+                    style="@style/SafeGuard.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xl"
+                    android:layout_marginBottom="@dimen/spacing_md"
+                    android:text="Logout"
+                    android:textColor="@color/error"
+                    app:icon="@drawable/ic_logout"
+                    app:iconTint="@color/error"
+                    app:strokeColor="@color/error" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Loading Indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminateTint="@color/accent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

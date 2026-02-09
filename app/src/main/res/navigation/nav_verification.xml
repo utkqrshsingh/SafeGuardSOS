@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/verificationGraph"
+    app:startDestination="@id/aadhaarVerificationFragment">
+
+    <fragment
+        android:id="@+id/aadhaarVerificationFragment"
+        android:name="com.safeguard.sos.presentation.auth.verification.AadhaarVerificationFragment"
+        android:label="Aadhaar Verification"
+        tools:layout="@layout/fragment_aadhaar_verification">
+
+        <action
+            android:id="@+id/action_aadhaar_to_otp"
+            app:destination="@id/otpVerificationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="com.safeguard.sos.presentation.auth.verification.OtpVerificationFragment"
+        android:label="OTP Verification"
+        tools:layout="@layout/fragment_otp_verification" />
+
+</navigation>

@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "project_number": "774165743474",
+    "project_id": "safeguardsos-43752",
+    "storage_bucket": "safeguardsos-43752.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774165743474:android:9affab0fd828c34fd0bfeb",
+        "android_client_info": {
+          "package_name": "com.safeguard.sos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVxPykmhSiR1q2bquEvJmwtn50IoKxwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774165743474:android:9affab0fd828c34fd0bfeb",
+        "android_client_info": {
+          "package_name": "com.safeguard.sos.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVxPykmhSiR1q2bquEvJmwtn50IoKxwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774165743474:android:9affab0fd828c34fd0bfeb",
+        "android_client_info": {
+          "package_name": "com.safeguard.sos.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVxPykmhSiR1q2bquEvJmwtn50IoKxwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774165743474:android:9affab0fd828c34fd0bfeb",
+        "android_client_info": {
+          "package_name": "com.safeguard.sos.dev.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVxPykmhSiR1q2bquEvJmwtn50IoKxwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774165743474:android:9affab0fd828c34fd0bfeb",
+        "android_client_info": {
+          "package_name": "com.safeguard.sos.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVxPykmhSiR1q2bquEvJmwtn50IoKxwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774165743474:android:9affab0fd828c34fd0bfeb",
+        "android_client_info": {
+          "package_name": "com.safeguard.sos.dev.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjVxPykmhSiR1q2bquEvJmwtn50IoKxwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

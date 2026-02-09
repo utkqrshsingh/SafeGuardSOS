@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:padding="@dimen/spacing_sm"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary" />
+
+    <!-- Step Indicator -->
+    <LinearLayout
+        android:id="@+id/step_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_completed" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_completed" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_completed" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_step_active" />
+
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/accent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_indicator"
+        app:trackColor="@color/surface"
+        app:trackCornerRadius="2dp" />
+
+    <!-- ScrollView -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_lg"
+            android:paddingTop="@dimen/spacing_xxl"
+            android:paddingBottom="@dimen/spacing_lg">
+
+            <!-- OTP Icon -->
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_icon_container_blue_large">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_fingerprint"
+                    app:tint="@color/accent" />
+
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:gravity="center"
+                android:text="@string/enter_verification_code"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_heading" />
+
+            <!-- Subtitle with masked Aadhaar -->
+            <TextView
+                android:id="@+id/tv_aadhaar_masked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body"
+                tools:text="OTP sent to Aadhaar XXXX XXXX 9012" />
+
+            <!-- Masked phone -->
+            <TextView
+                android:id="@+id/tv_phone_masked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textColor="@color/text_tertiary"
+                android:textSize="@dimen/text_caption"
+                android:visibility="gone"
+                tools:text="Sent to ****6789"
+                tools:visibility="visible" />
+
+            <!-- OTP Input Container -->
+            <LinearLayout
+                android:id="@+id/ll_otp_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_otp_1"
+                    style="@style/OtpEditText"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_otp_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_heading"
+                    tools:text="1" />
+
+                <EditText
+                    android:id="@+id/et_otp_2"
+                    style="@style/OtpEditText"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_otp_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_heading"
+                    tools:text="2" />
+
+                <EditText
+                    android:id="@+id/et_otp_3"
+                    style="@style/OtpEditText"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_otp_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_heading"
+                    tools:text="3" />
+
+                <!-- Separator -->
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="2dp"
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:background="@color/text_tertiary" />
+
+                <EditText
+                    android:id="@+id/et_otp_4"
+                    style="@style/OtpEditText"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_otp_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_heading"
+                    tools:text="4" />
+
+                <EditText
+                    android:id="@+id/et_otp_5"
+                    style="@style/OtpEditText"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_otp_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_heading"
+                    tools:text="5" />
+
+                <EditText
+                    android:id="@+id/et_otp_6"
+                    style="@style/OtpEditText"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:autofillHints=""
+                    android:background="@drawable/bg_otp_box"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_heading"
+                    tools:text="6" />
+
+            </LinearLayout>
+
+            <!-- Attempts remaining -->
+            <TextView
+                android:id="@+id/tv_attempts_remaining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textColor="@color/warning"
+                android:textSize="@dimen/text_small"
+                android:visibility="gone"
+                tools:text="4 attempts remaining"
+                tools:visibility="visible" />
+
+            <!-- Resend OTP -->
+            <TextView
+                android:id="@+id/tv_resend_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:fontFamily="@font/inter_medium"
+                android:padding="@dimen/spacing_sm"
+                android:text="@string/resend_otp"
+                android:textColor="@color/text_tertiary"
+                android:textSize="@dimen/text_body"
+                tools:text="Resend OTP in 45s" />
+
+            <!-- Change Aadhaar -->
+            <TextView
+                android:id="@+id/tv_change_aadhaar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:fontFamily="@font/inter_medium"
+                android:padding="@dimen/spacing_sm"
+                android:text="@string/change_aadhaar_number"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_caption" />
+
+            <!-- Success View (hidden by default) -->
+            <ImageView
+                android:id="@+id/iv_success_icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_check_circle"
+                android:visibility="gone"
+                app:tint="@color/success" />
+
+            <TextView
+                android:id="@+id/tv_success_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:gravity="center"
+                android:text="@string/verification_successful"
+                android:textColor="@color/success"
+                android:textSize="@dimen/text_subtitle"
+                android:visibility="gone" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Verify Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_verify_otp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:alpha="0.5"
+                android:enabled="false"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/verify_otp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_button"
+                app:backgroundTint="@color/accent"
+                app:cornerRadius="@dimen/radius_medium"
+                app:icon="@drawable/ic_shield_check"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/spacing_sm"
+                app:iconTint="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

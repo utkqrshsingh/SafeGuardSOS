@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary">
+
+    <!-- Map -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Toolbar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_gradient_toolbar"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/white"
+            app:title="@string/tracking"
+            app:titleTextAppearance="@style/TextAppearance.SafeGuard.Toolbar.Light"
+            app:titleTextColor="@color/white" />
+
+        <!-- Helpers Count Badge -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="@dimen/spacing_md"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="@dimen/radius_pill"
+            app:cardElevation="@dimen/elevation_md">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/spacing_md"
+                android:paddingVertical="@dimen/spacing_sm">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_helper"
+                    app:tint="@color/status_success" />
+
+                <TextView
+                    android:id="@+id/tvHelpersCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_label_medium"
+                    tools:text="2 helpers" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Recenter FAB -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabRecenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:contentDescription="@string/recenter"
+            android:src="@drawable/ic_my_location"
+            app:backgroundTint="@color/surface"
+            app:fabSize="mini"
+            app:tint="@color/text_primary" />
+
+    </FrameLayout>
+
+    <!-- Bottom Card - Nearest Helper Info -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardNearestHelper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/spacing_md"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="@dimen/radius_lg"
+        app:cardElevation="@dimen/elevation_lg"
+        app:rippleColor="@color/ripple_light"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            padding="@dimen/spacing_md">
+
+            <TextView
+                android:id="@+id/tvNearestLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/nearest_helper"
+                android:textColor="@color/text_tertiary"
+                android:textSize="@dimen/text_label_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHelperAvatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                app:cardBackgroundColor="@color/status_success"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNearestLabel">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_helper"
+                    app:tint="@color/white" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvNearestHelperName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_title_small"
+                app:layout_constraintEnd_toStartOf="@id/tvNearestHelperEta"
+                app:layout_constraintStart_toEndOf="@id/cardHelperAvatar"
+                app:layout_constraintTop_toTopOf="@id/cardHelperAvatar"
+                tools:text="John Doe" />
+
+            <TextView
+                android:id="@+id/tvNearestHelperStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/status_info"
+                android:textSize="@dimen/text_label_medium"
+                app:layout_constraintEnd_toStartOf="@id/tvNearestHelperEta"
+                app:layout_constraintStart_toEndOf="@id/cardHelperAvatar"
+                app:layout_constraintTop_toBottomOf="@id/tvNearestHelperName"
+                tools:text="On the way" />
+
+            <TextView
+                android:id="@+id/tvNearestHelperEta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:textColor="@color/status_success"
+                android:textSize="@dimen/text_title_medium"
+                app:layout_constraintBottom_toBottomOf="@id/cardHelperAvatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cardHelperAvatar"
+                tools:text="ETA: 3 min" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_arrow_forward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardHelperAvatar"
+                app:tint="@color/text_tertiary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Loading -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/accent"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

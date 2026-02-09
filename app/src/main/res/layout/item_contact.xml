@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_md"
+    android:layout_marginVertical="@dimen/spacing_xs"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="@dimen/corner_radius_md"
+    app:cardElevation="2dp"
+    app:rippleColor="@color/ripple_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_md">
+
+        <!-- Avatar -->
+        <FrameLayout
+            android:id="@+id/avatarContainer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <View
+                android:id="@+id/avatarBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_circle_avatar" />
+
+            <TextView
+                android:id="@+id/textContactInitial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h5"
+                android:fontFamily="@font/inter_bold"
+                tools:text="J" />
+
+            <!-- Primary Badge -->
+            <ImageView
+                android:id="@+id/iconPrimary"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_star_filled"
+                android:visibility="gone"
+                app:tint="@color/warning"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+        <!-- Contact Info -->
+        <LinearLayout
+            android:id="@+id/contactInfoLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/avatarContainer"
+            app:layout_constraintEnd_toStartOf="@id/actionsLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textContactName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="John Doe" />
+
+                <ImageView
+                    android:id="@+id/iconNotification"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/spacing_xs"
+                    android:src="@drawable/ic_notification"
+                    android:visibility="gone"
+                    app:tint="@color/accent"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textContactPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2"
+                tools:text="+91 98765 43210" />
+
+            <TextView
+                android:id="@+id/textContactRelationship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_size_caption"
+                android:fontFamily="@font/inter_medium"
+                tools:text="Parent" />
+
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/actionsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageButton
+                android:id="@+id/buttonPrimary"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_icon_button"
+                android:src="@drawable/ic_star_outline"
+                app:tint="@color/text_secondary"
+                android:contentDescription="Set as primary" />
+
+            <ImageButton
+                android:id="@+id/buttonCall"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:background="@drawable/bg_icon_button_accent"
+                android:src="@drawable/ic_phone"
+                app:tint="@color/accent"
+                android:contentDescription="Call contact" />
+
+            <ImageButton
+                android:id="@+id/buttonMessage"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:background="@drawable/bg_icon_button"
+                android:src="@drawable/ic_message"
+                app:tint="@color/text_secondary"
+                android:contentDescription="Message contact" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

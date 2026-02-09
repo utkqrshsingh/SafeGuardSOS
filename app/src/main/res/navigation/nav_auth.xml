@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/loginFragment">
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.safeguard.sos.presentation.auth.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_login_to_forgotPassword"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_login_to_mainActivity"
+            app:destination="@id/mainActivity" />
+
+    </fragment>
+
+    <!-- Register Fragment -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.safeguard.sos.presentation.auth.register.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_register_to_userTypeSelection"
+            app:destination="@id/userTypeSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <!-- User Type Selection Fragment -->
+    <fragment
+        android:id="@+id/userTypeSelectionFragment"
+        android:name="com.safeguard.sos.presentation.auth.register.UserTypeSelectionFragment"
+        android:label="@string/choose_your_role"
+        tools:layout="@layout/fragment_user_type_selection">
+
+        <action
+            android:id="@+id/action_userTypeSelection_to_aadhaarVerification"
+            app:destination="@id/aadhaarVerificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <!-- Aadhaar Verification Fragment -->
+    <fragment
+        android:id="@+id/aadhaarVerificationFragment"
+        android:name="com.safeguard.sos.presentation.auth.verification.AadhaarVerificationFragment"
+        android:label="@string/verify_aadhaar"
+        tools:layout="@layout/fragment_aadhaar_verification">
+
+        <action
+            android:id="@+id/action_aadhaarVerification_to_otpVerification"
+            app:destination="@id/otpVerificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+
+            <argument
+                android:name="aadhaarNumber"
+                app:argType="string" />
+
+        </action>
+
+    </fragment>
+
+    <!-- OTP Verification Fragment -->
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="com.safeguard.sos.presentation.auth.verification.OtpVerificationFragment"
+        android:label="@string/verify_otp"
+        tools:layout="@layout/fragment_otp_verification">
+
+        <argument
+            android:name="aadhaarNumber"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_otpVerification_to_mainActivity"
+            app:destination="@id/mainActivity" />
+
+    </fragment>
+
+    <!-- Forgot Password Fragment -->
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.safeguard.sos.presentation.auth.forgotpassword.ForgotPasswordFragment"
+        android:label="@string/forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <!-- Main Activity (external destination) -->
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.safeguard.sos.presentation.main.MainActivity"
+        android:label="@string/app_name" />
+
+</navigation>

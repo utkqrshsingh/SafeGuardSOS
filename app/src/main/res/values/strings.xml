@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ==================== APP INFO ==================== -->
+
+    <string name="app_name">SafeGuard SOS</string>
+    <string name="app_tagline">Your Safety, Our Priority</string>
+    <string name="app_description">Emergency SOS with community-based rapid response</string>
+
+    <!-- ==================== COMMON ==================== -->
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="done">Done</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="skip">Skip</string>
+    <string name="retry">Retry</string>
+    <string name="close">Close</string>
+    <string name="confirm">Confirm</string>
+    <string name="continue_text">Continue</string>
+    <string name="submit">Submit</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="other">Other</string>
+    <string name="loading">Loading…</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="search">Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="see_all">See All</string>
+    <string name="view_more">View More</string>
+    <string name="learn_more">Learn More</string>
+    <string name="got_it">Got It</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied to clipboard</string>
+    <string name="setting_up">Setting up…</string>
+    <string name="try_again">Try Again</string>
+
+    <!-- ==================== SPLASH & ONBOARDING ==================== -->
+
+    <string name="splash_loading">Securing your safety…</string>
+
+    <string name="onboarding_welcome_title">Welcome to SafeGuard</string>
+    <string name="onboarding_welcome_description">Your personal safety companion with community-powered emergency response</string>
+
+    <string name="onboarding_sos_title">One-Tap SOS</string>
+    <string name="onboarding_sos_description">Send emergency alerts instantly to your trusted contacts and nearby verified helpers</string>
+
+    <string name="onboarding_helpers_title">Community Helpers</string>
+    <string name="onboarding_helpers_description">Verified volunteers within 5-10 km radius receive your SOS and can reach you quickly</string>
+
+    <string name="onboarding_tracking_title">Real-Time Tracking</string>
+    <string name="onboarding_tracking_description">Share your live location with responders and track help arriving to you</string>
+
+    <string name="onboarding_verification_title">Aadhaar Verified</string>
+    <string name="onboarding_verification_description">All users are verified through Aadhaar OTP for a safe and trustworthy community</string>
+
+    <string name="onboarding_permissions_title">Enable Permissions</string>
+    <string name="onboarding_permissions_description">We need a few permissions to keep you safe. These are essential for the app to function properly.</string>
+
+    <string name="get_started">Get Started</string>
+
+    <!-- ==================== AUTHENTICATION ==================== -->
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to continue to SafeGuard</string>
+    <string name="login_with_phone">Login with Phone</string>
+    <string name="login_with_email">Login with Email</string>
+    <string name="login_with_google">Continue with Google</string>
+    <string name="logging_in">Signing in…</string>
+
+    <!-- Register -->
+    <string name="register">Register</string>
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Join the SafeGuard community</string>
+    <string name="create_account">Create Account</string>
+    <string name="creating_account">Creating account…</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="registration_failed">Registration Failed</string>
+
+    <!-- User Type Selection -->
+    <string name="select_user_type">How would you like to use SafeGuard?</string>
+    <string name="choose_your_role">Choose Your Role</string>
+    <string name="choose_your_role_desc">Select how you want to use SafeGuard SOS</string>
+    <string name="user_type_user">User</string>
+    <string name="user_type_user_desc">Send SOS alerts and get help in emergencies</string>
+    <string name="user_type_helper">Helper</string>
+    <string name="user_type_helper_desc">Receive nearby alerts and help others in need</string>
+    <string name="user_type_both">User + Helper</string>
+    <string name="user_type_both_desc">Send alerts and help others - complete protection</string>
+    <string name="recommended">RECOMMENDED</string>
+    <string name="please_select_user_type">Please select a user type</string>
+
+    <!-- Form Fields -->
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name">Enter your full name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_phone_number">Enter your phone number</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter your email address</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter your password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_confirm_password">Re-enter your password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+
+    <!-- Aadhaar Verification -->
+    <string name="aadhaar_verification">Aadhaar Verification</string>
+    <string name="aadhaar_verification_title">Verify Your Identity</string>
+    <string name="aadhaar_verification_subtitle">We verify all users through Aadhaar to maintain a safe community</string>
+    <string name="aadhaar_number">Aadhaar Number</string>
+    <string name="enter_aadhaar">Enter your 12-digit Aadhaar number</string>
+    <string name="aadhaar_hint">XXXX XXXX XXXX</string>
+    <string name="verify_aadhaar">Verify Your Identity</string>
+    <string name="verifying_aadhaar">Verifying Aadhaar…</string>
+    <string name="verifying">Verifying…</string>
+    <string name="aadhaar_verified">Aadhaar Verified Successfully</string>
+    <string name="aadhaar_verification_failed">Aadhaar Verification Failed</string>
+    <string name="aadhaar_privacy_note">Your Aadhaar details are encrypted and never stored on our servers</string>
+    <string name="why_aadhaar">Why do we need Aadhaar?</string>
+    <string name="aadhaar_reason">Aadhaar verification helps us ensure that all users and helpers are genuine, creating a safe and trustworthy community for everyone.</string>
+    <string name="verify_aadhaar_desc">Enter your Aadhaar number</string>
+    <string name="secure_verification">Secure Verification</string>
+    <string name="aadhaar_placeholder">XXXX XXXX XXXX</string>
+    <string name="aadhaar_digits_remaining">%d digits remaining</string>
+    <string name="aadhaar_valid">✓ Valid Aadhaar number</string>
+    <string name="aadhaar_invalid">Invalid Aadhaar number</string>
+    <string name="invalid_aadhaar_number">Invalid Aadhaar number</string>
+    <string name="aadhaar_privacy_notice">Your Aadhaar is encrypted and stored securely. We use it only for identity verification.</string>
+    <string name="view_privacy_policy">View Privacy Policy</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="aadhaar_info_title">Why Aadhaar?</string>
+    <string name="aadhaar_info_message">We verify your Aadhaar to ensure the safety and authenticity of our community. This helps prevent misuse and ensures genuine help reaches those in need.</string>
+    <string name="info">Info</string>
+    <string name="privacy_policy_clicked">Privacy policy will open</string>
+    <string name="why_aadhaar_title">Why Aadhaar Verification?</string>
+    <string name="why_aadhaar_message">To ensure safety and reliability in our emergency network, we verify all users and helpers using Aadhaar.</string>
+    <string name="understood">Understood</string>
+    <string name="verify_send_otp">Verify and Send OTP</string>
+
+    <!-- OTP Verification -->
+    <string name="otp_verification">OTP Verification</string>
+    <string name="otp_verification_title">Enter Verification Code</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="otp_sent_to">We\'ve sent a 6-digit code to</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="verifying_otp">Verifying…</string>
+    <string name="otp_verified">OTP Verified Successfully</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="resend_otp_in">Resend OTP in %1$d seconds</string>
+    <string name="didnt_receive_otp">Didn\'t receive the code?</string>
+    <string name="otp_expired">OTP expired. Please request a new one.</string>
+    <string name="invalid_otp">Invalid OTP. Please try again.</string>
+    <string name="otp_sent_to_aadhaar">OTP sent to Aadhaar linked mobile %s</string>
+    <string name="change_aadhaar">Change Aadhaar</string>
+    <string name="change_aadhaar_number">Change Aadhaar</string>
+    <string name="resend_otp_timer">Resend in %ds</string>
+    <string name="verification_successful">Verification Successful!</string>
+    <string name="redirecting">Redirecting to home...</string>
+
+    <!-- Forgot Password -->
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password_title">Reset Password</string>
+    <string name="forgot_password_subtitle">Enter your registered email to receive reset instructions</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="reset_link_sent">Reset link sent to your email</string>
+    <string name="check_email">Check your email</string>
+    <string name="forgot_password_desc">Don\'t worry! Enter your email or phone number and we\'ll send you a reset link.</string>
+    <string name="forgot_password_email_hint">We\'ll send a password reset link to your email</string>
+    <string name="forgot_password_phone_hint">We\'ll send a password reset code to your phone</string>
+    <string name="phone">Phone</string>
+    <string name="back_to_login">← Back to Login</string>
+    <string name="check_inbox">Check Your Inbox!</string>
+    <string name="reset_email_sent">We\'ve sent a password reset link to %s</string>
+    <string name="reset_sms_sent">We\'ve sent a password reset code to %s</string>
+    <string name="open_email_app">Open Email App</string>
+
+    <!-- Logout -->
+    <string name="logout">Logout</string>
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+    <string name="logging_out">Logging out…</string>
+
+    <!-- ==================== HOME ==================== -->
+
+    <string name="home">Home</string>
+    <string name="hello">Hello,</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="good_afternoon">Good Afternoon</string>
+    <string name="good_evening">Good Evening</string>
+    <string name="you_are_safe">You are safe</string>
+    <string name="stay_safe">Stay Safe</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="nearby_helpers">Nearby Helpers</string>
+    <string name="helpers_available">%1$d helpers available nearby</string>
+    <string name="no_helpers_nearby">No helpers nearby</string>
+    <string name="good_night">Good Night,</string>
+    <string name="you_are_protected">You\'re Protected</string>
+    <string name="protection_message">%d helpers nearby ready to assist</string>
+    <string name="limited_protection">Limited Protection</string>
+    <string name="enable_location_message">Enable location for full protection</string>
+    <string name="alert_active">Alert Active!</string>
+    <string name="help_is_on_the_way">Help is on the way</string>
+    <string name="tap_for_emergency">Tap for emergency help</string>
+    <string name="quick_call">Quick Call</string>
+    <string name="alert">Alert</string>
+    <string name="helpers">Helpers</string>
+    <string name="total_alerts">Total Alerts</string>
+    <string name="helpers_nearby">Helpers Nearby</string>
+    <string name="people_helped">People Helped</string>
+    <string name="helper_mode_active">You\'ll receive nearby SOS alerts</string>
+    <string name="helper_mode_inactive">Turn on to help others in need</string>
+    <string name="recent_alerts">Recent Alerts</string>
+    <string name="view_all">View All</string>
+    <string name="no_recent_alerts">No alerts yet. Stay safe!</string>
+    <string name="safety_tip">Safety Tip</string>
+    <string name="tap_for_more_tips">Tap for more tips →</string>
+    <string name="alert_status_pending">Sending Alert...</string>
+    <string name="alert_status_active">Alert Sent</string>
+    <string name="alert_status_helper_responding">Help on the way!</string>
+    <string name="helper_mode_active_status">Active Mode</string>
+    <string name="helper_mode_inactive_status">Inactive Mode</string>
+    <string name="enable_helper_mode_message">Please enable Helper Mode to receive alerts</string>
+    <string name="location_active">Location Tracking Active</string>
+    <string name="location_unavailable">Location Tracking Unavailable</string>
+
+    <!-- ==================== SOS ==================== -->
+
+    <string name="sos">SOS</string>
+    <string name="sos_button">SOS Button</string>
+    <string name="hold_for_sos">Hold for SOS</string>
+    <string name="press_and_hold">Press and hold to activate SOS</string>
+    <string name="release_to_cancel">Release to cancel</string>
+    <string name="sos_activating">Activating SOS…</string>
+    <string name="sos_activated">SOS Activated!</string>
+    <string name="sos_countdown">SOS Alert in %1$d seconds</string>
+    <string name="sos_countdown_message">Tap anywhere to cancel</string>
+    <string name="cancel_sos">Cancel SOS</string>
+    <string name="sos_cancelled">SOS Cancelled</string>
+
+    <string name="sos_active">SOS Active</string>
+    <string name="sos_active_message">Help is on the way!</string>
+    <string name="sending_alerts">Sending alerts to nearby helpers…</string>
+    <string name="alerts_sent">Alerts sent to %1$d helpers</string>
+    <string name="contacting_emergency_contacts">Contacting emergency contacts…</string>
+    <string name="sharing_location">Sharing your location…</string>
+    <string name="recording_audio">Recording audio for evidence…</string>
+
+    <string name="helpers_responding">Helpers Responding</string>
+    <string name="helper_on_way">%1$s is on the way</string>
+    <string name="helper_arriving_in">Arriving in %1$d min</string>
+    <string name="helper_arrived">Helper has arrived</string>
+
+    <string name="mark_safe">I\'m Safe Now</string>
+    <string name="confirm_safe">Are you sure you\'re safe now?</string>
+    <string name="marked_safe">Marked as Safe</string>
+    <string name="false_alarm">False Alarm</string>
+    <string name="false_alarm_confirm">Was this a false alarm?</string>
+    <string name="false_alarm_note">Multiple false alarms may affect your account</string>
+
+    <string name="sos_history">SOS History</string>
+    <string name="no_sos_history">No SOS history yet</string>
+    <string name="sos_detail">SOS Details</string>
+
+    <!-- SOS Status -->
+    <string name="status_pending">Pending</string>
+    <string name="status_active">Active</string>
+    <string name="status_responded">Responded</string>
+    <string name="status_resolved">Resolved</string>
+    <string name="status_cancelled">Cancelled</string>
+    <string name="status_false_alarm">False Alarm</string>
+    <string name="resolved">Resolved</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="active">Active</string>
+    <string name="helped">Helped</string>
+    <string name="help_on_way">Help on the way</string>
+    <string name="helpers_count">%d helpers</string>
+    <string name="duration_minutes">%d minutes</string>
+
+    <string name="emergency_sos">Emergency SOS</string>
+    <string name="hold">HOLD</string>
+    <string name="hold_to_trigger_sos">Hold the button to trigger SOS</string>
+    <string name="long_press_to_trigger">Long press to trigger SOS</string>
+    <string name="location_acquired">Location Ready</string>
+    <string name="acquiring_location">Acquiring Location...</string>
+    <string name="contacts_will_be_notified">%d contacts will be notified</string>
+    <string name="helpers_in_range">%d helpers in range</string>
+    <string name="emergency_type">Emergency Type</string>
+    <string name="medical">Medical</string>
+    <string name="safety">Safety</string>
+    <string name="accident">Accident</string>
+    <string name="silent_mode">Silent Mode</string>
+    <string name="silent_mode_desc">No sound or vibration during alert</string>
+    <string name="silent_mode_enabled">Silent mode enabled</string>
+    <string name="contacts_only">Contacts Only</string>
+    <string name="contacts_only_desc">Only notify your emergency contacts</string>
+    <string name="additional_message_hint">Add a message (optional)</string>
+    <string name="manage_emergency_contacts">Manage Emergency Contacts</string>
+    <string name="send_test_alert">Send Test Alert</string>
+    <string name="test_sos_title">Test SOS Alert</string>
+    <string name="test_sos_message">This will send a test notification to your contacts. No helpers will be notified.</string>
+    <string name="send_test">Send Test</string>
+    <string name="active_alert_warning">You have an active SOS alert</string>
+    <string name="location_permission_required">Location permission required for SOS</string>
+    <string name="sos_permissions_message">We need location permission to share your location during emergencies.</string>
+    <string name="location_permission_denied">Location permission denied. SOS may not work properly.</string>
+    <string name="sos_sending_in">SOS Sending In...</string>
+    <string name="seconds_remaining">seconds remaining</string>
+    <string name="send_now">Send Now</string>
+    <string name="location_ready">Location ready</string>
+    <string name="sending_alert">Sending Alert...</string>
+    <string name="notifying_helpers">Notifying nearby helpers...</string>
+    <string name="alert_pending">Sending Alert</string>
+    <string name="sending_notifications">Sending notifications...</string>
+    <string name="helpers_notified">Helpers have been notified</string>
+    <string name="helpers_coming">Helpers are coming to your location</string>
+    <string name="helper_with_you">A helper is with you</string>
+    <string name="alert_resolved">Alert Resolved</string>
+    <string name="cancelled_by_you">Cancelled by you</string>
+    <string name="elapsed">elapsed</string>
+    <string name="nearest_helper_eta">Nearest helper:</string>
+    <string name="fetching_address">Fetching address...</string>
+    <string name="location_coords">%.6f, %.6f</string>
+    <string name="view_map">View on Map</string>
+    <string name="contacts_notified_count">%d contacts notified</string>
+    <string name="sms_sent_count">SMS sent to %d contacts</string>
+    <string name="waiting_for_helpers">Waiting for helpers to respond...</string>
+    <string name="helpers_responding_count">%d helpers responding</string>
+    <string name="responding_helpers">Responding Helpers</string>
+    <string name="call_112">Call 112</string>
+    <string name="update">Update</string>
+    <string name="im_safe">I\'m Safe</string>
+    <string name="cancel_sos_title">Cancel SOS Alert?</string>
+    <string name="cancel_sos_message">Are you sure you want to cancel the SOS alert? Helpers will be notified that you no longer need assistance.</string>
+    <string name="yes_cancel">Yes, Cancel</string>
+    <string name="no_keep_active">No, Keep Active</string>
+    <string name="mark_safe_title">Mark Yourself Safe?</string>
+    <string name="mark_safe_message">This will notify all helpers that you are now safe and no longer need assistance.</string>
+    <string name="yes_im_safe">Yes, I\'m Safe</string>
+    <string name="sos_cancelled_success">SOS alert cancelled</string>
+    <string name="update_message">Update Message</string>
+    <string name="update_message_hint">Send an update to helpers...</string>
+    <string name="send">Send</string>
+    <string name="share_location_text">I need help! My location: https://maps.google.com/?q=%f,%f</string>
+    <string name="default_helper_message">I\'m responding to your SOS. Stay calm, help is on the way!</string>
+    <string name="alert_sent">Alert Sent</string>
+    <string name="help_on_the_way">Help is on the way!</string>
+    <string name="help_arrived">Helper has arrived</string>
+    <string name="alert_cancelled">Alert Cancelled</string>
+
+    <!-- ==================== HELPER ==================== -->
+
+    <string name="helper">Helper</string>
+    <string name="helper_mode">Helper Mode</string>
+    <string name="helper_dashboard">Helper Dashboard</string>
+    <string name="become_helper">Become a Helper</string>
+    <string name="helper_registration">Helper Registration</string>
+    <string name="helper_registration_subtitle">Join our community of verified helpers</string>
+    <string name="register_as_helper">Register as Helper</string>
+    <string name="helper_terms">By registering, you agree to respond promptly and responsibly to SOS alerts</string>
+
+    <string name="helper_active">Active</string>
+    <string name="helper_inactive">Inactive</string>
+    <string name="go_active">Go Active</string>
+    <string name="go_inactive">Go Inactive</string>
+    <string name="helper_status">Helper Status</string>
+    <string name="active_helpers_nearby">%1$d active helpers nearby</string>
+
+    <string name="nearby_alerts">Nearby Alerts</string>
+    <string name="new_sos_alert">New SOS Alert!</string>
+    <string name="sos_alert_from">SOS Alert from %1$s</string>
+    <string name="distance_away">%1$s away</string>
+    <string name="respond_to_alert">Respond</string>
+    <string name="responding">Responding</string>
+    <string name="you_are_responding">You are responding to this alert</string>
+    <string name="navigate_to_victim">Navigate</string>
+    <string name="call_victim">Call</string>
+    <string name="message_victim">Message</string>
+    <string name="arrived_at_location">I\'ve Arrived</string>
+    <string name="confirm_arrival">Confirm Arrival</string>
+    <string name="situation_resolved">Situation Resolved</string>
+
+    <string name="helper_history">Response History</string>
+    <string name="no_helper_history">No response history yet</string>
+    <string name="response_time_avg">Avg Response Time</string>
+    <string name="helper_rating">Rating</string>
+    <string name="helper_stats">Your Stats</string>
+    <string name="notification_radius">Notification Radius</string>
+    <string name="radius_5km">5 km</string>
+    <string name="radius_10km">10 km</string>
+    <string name="current_radius">Current: %1$d km</string>
+    <string name="on_the_way">On the way</string>
+    <string name="arrived">Arrived</string>
+    <string name="eta_format">ETA: %s</string>
+    <string name="message">Message</string>
+    <string name="call">Call</string>
+    <string name="available">Available</string>
+    <string name="busy">Busy</string>
+    <string name="offline">Offline</string>
+    <string name="status">Status</string>
+    <string name="alert_radius">Alert Radius</string>
+    <string name="radius_km">%d km</string>
+    <string name="active_response">Active Response</string>
+    <string name="avg_response">Avg Response</string>
+    <string name="active_time">Active Time</string>
+    <string name="no_alerts">No alerts</string>
+    <string name="alerts_count">%d alerts</string>
+    <string name="no_nearby_alerts">No Nearby Alerts</string>
+    <string name="no_alerts_helper_message">When someone nearby needs help, you\'ll see their alert here.</string>
+    <string name="recent_help">Recent Help</string>
+    <string name="no_help_history">No help history yet</string>
+    <string name="become_a_helper">Become a Helper</string>
+    <string name="become_helper_description">Join our community of verified helpers and make a difference. Help others in emergencies and earn badges.</string>
+    <string name="respond_confirmation_message">You\'re about to respond to %s\'s emergency. You\'ll be navigated to their location.</string>
+    <string name="response_sent">Response sent! Navigate to help.</string>
+    <string name="set_availability">Set Availability</string>
+    <string name="set_alert_radius">Set Alert Radius</string>
+    <string name="helper_settings">Helper Settings</string>
+    <string name="auto_accept_settings">Auto Accept Settings</string>
+    <string name="helper_profile">Helper Profile</string>
+    <string name="location_required">Location Required</string>
+    <string name="helper_location_permission_message">Helper mode requires location access to receive nearby alerts and navigate to people in need.</string>
+    <string name="grant">Grant</string>
+    <string name="helpers_responding_count_short">%d responding</string>
+    <string name="alerts_found">%d alerts found</string>
+    <string name="sort">Sort</string>
+    <string name="map_view">Map View</string>
+    <string name="all">All</string>
+    <string name="sort_alerts">Sort Alerts</string>
+    <string name="sort_by_distance">Distance (Nearest first)</string>
+    <string name="sort_by_time">Time (Newest first)</string>
+    <string name="sort_by_urgency">Urgency</string>
+    <string name="all_clear">All Clear!</string>
+    <string name="no_alerts_in_area">No active alerts in your area right now.</string>
+    <string name="minutes_ago_short">%dm</string>
+    <string name="hours_ago_short">%dh</string>
+    <string name="days_ago_short">%dd</string>
+    <string name="meters_away">%d m away</string>
+    <string name="km_away">%.1f km away</string>
+    <string name="alert_details">Alert Details</string>
+    <string name="sos_location">SOS Location</string>
+    <string name="location_unknown">Location unknown</string>
+    <string name="help_coming">Help Coming</string>
+    <string name="alert_has_been_resolved">This alert has been resolved</string>
+    <string name="alert_has_been_cancelled">This alert has been cancelled</string>
+    <string name="you_have_arrived">You have arrived at the location</string>
+    <string name="i_have_arrived">I\'ve Arrived</string>
+    <string name="mark_arrived">Mark Arrived</string>
+    <string name="cancel_response">Cancel Response</string>
+    <string name="cancel_response_message">Are you sure you want to cancel your response? The person in need will be notified.</string>
+    <string name="respond_to_this_alert">Respond to This Alert</string>
+    <string name="navigate_to_location">Navigate to Location</string>
+    <string name="action_successful">Action completed successfully</string>
+    <string name="navigating">Navigating</string>
+    <string name="distance">Distance</string>
+    <string name="eta">ETA</string>
+    <string name="open_google_maps">Open in Maps</string>
+    <string name="i_arrived">I\'ve Arrived</string>
+    <string name="exit_navigation">Exit Navigation?</string>
+    <string name="exit_navigation_message">You\'re still marked as responding. Do you want to exit navigation?</string>
+    <string name="yes_exit">Yes, Exit</string>
+    <string name="continue_navigating">Continue</string>
+    <string name="on_my_way_message">I\'m on my way to help you. Stay calm!</string>
+    <string name="status_updated">Status updated</string>
+    <string name="recenter">Recenter</string>
+    <string name="traffic">Traffic</string>
+    <string name="meters_format">%d m</string>
+    <string name="km_format">%.1f km</string>
+    <string name="helpers_tracking">%d helpers</string>
+    <string name="nearest_helper">Nearest Helper</string>
+    <string name="response_time_format">⚡ %s</string>
+    <string name="nearest">Nearest</string>
+    <string name="recent">Recent</string>
+    <string name="no_nearby_alerts_desc">When someone nearby needs help, you\'ll see their alert here.</string>
+    <string name="victim_location">Victim\'s Location</string>
+    <string name="other_responders_count">Other Responders (%d)</string>
+    <string name="needs_help">Needs Help</string>
+    <string name="helper_there">Helper is there</string>
+    <string name="helper_message_template">I\'m on my way to help you. My ETA is %s. Stay calm!</string>
+    <string name="confirm_arrival_message">Confirm your arrival at the victim\'s location?</string>
+    <string name="yes_arrived">Yes, I\'ve Arrived</string>
+    <string name="responding_to_alert">Responding to SOS alert…</string>
+    <string name="within_km">Within %d km</string>
+
+    <!-- ==================== EMERGENCY CONTACTS ==================== -->
+
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_phone">Phone Number</string>
+    <string name="contact_relation">Relationship</string>
+    <string name="select_relation">Select Relationship</string>
+    <string name="contact_added">Contact added successfully</string>
+    <string name="contact_updated">Contact updated successfully</string>
+    <string name="contact_deleted">Contact deleted</string>
+    <string name="delete_contact_confirm">Are you sure you want to delete this contact?</string>
+    <string name="no_contacts">No emergency contacts added</string>
+    <string name="add_first_contact">Add your first emergency contact</string>
+    <string name="import_from_phone">Import from Contacts</string>
+    <string name="primary_contact">Primary Contact</string>
+    <string name="set_as_primary">Set as Primary</string>
+    <string name="notify_via_sms">Notify via SMS</string>
+    <string name="notify_via_call">Auto Call</string>
+    <string name="relation_parent">Parent</string>
+    <string name="relation_spouse">Spouse</string>
+    <string name="relation_sibling">Sibling</string>
+    <string name="relation_child">Child</string>
+    <string name="relation_friend">Friend</string>
+    <string name="relation_relative">Relative</string>
+    <string name="relation_colleague">Colleague</string>
+    <string name="relation_other">Other</string>
+    <string name="contacts">Contacts</string>
+    <string name="contact_count_format">%1$d of %2$d contacts</string>
+    <string name="one_slot_remaining">1 slot remaining</string>
+    <string name="slots_remaining">%d slots remaining</string>
+    <string name="max_contacts_reached">Maximum number of emergency contacts reached</string>
+
+    <!-- ==================== MAP ==================== -->
+
+    <string name="map">Map</string>
+    <string name="your_location">Your Location</string>
+    <string name="location_not_available">Location not available</string>
+    <string name="getting_location">Getting your location…</string>
+    <string name="location_updated">Location updated</string>
+    <string name="view_on_map">View on Map</string>
+    <string name="open_in_maps">Open in Google Maps</string>
+    <string name="navigate">Navigate</string>
+    <string name="share_location">Share Location</string>
+    <string name="live_location">Live Location</string>
+    <string name="last_updated">Last updated: %1$s</string>
+    <string name="search_radius">Search Radius</string>
+    <string name="helpers_in_radius">Helpers within %1$d km</string>
+    <string name="zoom_in">Zoom In</string>
+    <string name="zoom_out">Zoom Out</string>
+    <string name="center_on_me">Center on Me</string>
+    <string name="tracking">Live Tracking</string>
+    <string name="last_updated_format">Last updated: %s</string>
+
+    <!-- ==================== PROFILE ==================== -->
+
+    <string name="profile">Profile</string>
+    <string name="my_profile">My Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="view_profile">View Profile</string>
+    <string name="profile_updated">Profile updated successfully</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="remove_photo">Remove Photo</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_from_gallery">Choose from Gallery</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="pincode">Pincode</string>
+    <string name="medical_info">Medical Information</string>
+    <string name="medical_conditions">Medical Conditions</string>
+    <string name="allergies">Allergies</string>
+    <string name="medications">Current Medications</string>
+    <string name="emergency_notes">Emergency Notes</string>
+    <string name="medical_info_note">This information will be shared with helpers during emergencies</string>
+    <string name="verification_status">Verification Status</string>
+    <string name="verified">Verified</string>
+    <string name="not_verified">Not Verified</string>
+    <string name="pending_verification">Pending Verification</string>
+    <string name="verify_now">Verify Now</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="prefer_not_to_say">Prefer not to say</string>
+    <string name="blood_a_positive">A+</string>
+    <string name="blood_a_negative">A-</string>
+    <string name="blood_b_positive">B+</string>
+    <string name="blood_b_negative">B-</string>
+    <string name="blood_ab_positive">AB+</string>
+    <string name="blood_ab_negative">AB-</string>
+    <string name="blood_o_positive">O+</string>
+    <string name="blood_o_negative">O-</string>
+    <string name="member_since">Member since %s</string>
+    <string name="verification_failed">Verification Failed</string>
+    <string name="no_allergies">No allergies added</string>
+    <string name="no_medications">No medications added</string>
+    <string name="no_conditions">No conditions added</string>
+
+    <!-- ==================== SETTINGS ==================== -->
+
+    <string name="app_settings">App Settings</string>
+    <string name="general_settings">General</string>
+    <string name="notification_settings">Notifications</string>
+    <string name="privacy_settings">Privacy &amp; Security</string>
+    <string name="location_settings">Location</string>
+    <string name="account_settings">Account</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System Default</string>
+    <string name="sos_settings">SOS Settings</string>
+    <string name="countdown_duration">Countdown Duration</string>
+    <string name="countdown_seconds">%1$d seconds</string>
+    <string name="shake_to_sos">Shake to SOS</string>
+    <string name="power_button_sos">Power Button SOS</string>
+    <string name="auto_record_audio">Auto Record Audio</string>
+    <string name="auto_record_video">Auto Record Video</string>
+    <string name="send_sms_backup">SMS Backup</string>
+    <string name="include_location_sms">Include location in SMS</string>
+    <string name="notifications">Notifications</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="sos_alerts">SOS Alerts</string>
+    <string name="helper_notifications">Helper Notifications</string>
+    <string name="sound">Sound</string>
+    <string name="vibration">Vibration</string>
+    <string name="notification_sound">Notification Sound</string>
+    <string name="privacy">Privacy</string>
+    <string name="biometric_lock">Biometric Lock</string>
+    <string name="auto_lock">Auto Lock</string>
+    <string name="share_live_location">Share Live Location</string>
+    <string name="visible_to_helpers">Visible to Helpers</string>
+    <string name="data_privacy">Data Privacy</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete_account_warning">This action cannot be undone. All your data will be permanently deleted.</string>
+    <string name="background_location">Background Location</string>
+    <string name="location_accuracy">Location Accuracy</string>
+    <string name="high_accuracy">High Accuracy</string>
+    <string name="battery_saving">Battery Saving</string>
+    <string name="about">About</string>
+    <string name="about_app">About SafeGuard SOS</string>
+    <string name="version">Version</string>
+    <string name="version_format">Version %s</string>
+    <string name="build_format">Build %d</string>
+    <string name="rate_app">Rate the App</string>
+    <string name="feedback">Send Feedback</string>
+    <string name="report_bug">Report a Bug</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="faq">FAQ</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="settings_saved">Settings saved</string>
+    <string name="cache_cleared">Cache cleared successfully</string>
+    <string name="settings_reset">Settings reset to defaults</string>
+    <string name="error_could_not_open_browser">Could not open browser</string>
+    <string name="development_team">Development Team</string>
+    <string name="developers_info_message">SafeGuard SOS is developed by a dedicated team committed to community safety.</string>
+
+    <!-- ==================== PERMISSIONS ==================== -->
+
+    <string name="permissions">Permissions</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="permission_location_title">Location Access</string>
+    <string name="permission_location_message">We need location access to send your position during emergencies and notify nearby helpers.</string>
+    <string name="permission_location_background_title">Background Location</string>
+    <string name="permission_location_background_message">Allow background location to keep tracking during active SOS even when app is minimized.</string>
+    <string name="permission_phone_title">Phone Access</string>
+    <string name="permission_phone_message">Required to make emergency calls and send SMS alerts.</string>
+    <string name="permission_sms_title">SMS Access</string>
+    <string name="permission_sms_message">Allows sending SMS alerts to emergency contacts when internet is unavailable.</string>
+    <string name="permission_contacts_title">Contacts Access</string>
+    <string name="permission_contacts_message">Import emergency contacts directly from your phone.</string>
+    <string name="permission_microphone_title">Microphone Access</string>
+    <string name="permission_microphone_message">Record audio during emergencies for evidence.</string>
+    <string name="permission_camera_title">Camera Access</string>
+    <string name="permission_camera_message">Record video during emergencies and update profile photo.</string>
+    <string name="permission_notification_title">Notifications</string>
+    <string name="permission_notification_message">Receive important SOS alerts and updates.</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="permission_denied_permanently">Permission denied permanently. Please enable from settings.</string>
+    <string name="permissions_required">Permissions Required</string>
+    <string name="permissions_rationale">SafeGuard SOS needs location permission to send your location during emergencies and notify nearby helpers. Notification permission is needed to receive alerts.</string>
+    <string name="grant_permissions">Grant Permissions</string>
+    <string name="continue_limited">Continue with Limited Features</string>
+
+    <!-- ==================== NOTIFICATIONS ==================== -->
+
+    <string name="channel_sos_name">SOS Alerts</string>
+    <string name="channel_sos_description">High priority emergency alerts</string>
+    <string name="channel_helper_name">Helper Alerts</string>
+    <string name="channel_helper_description">Notifications for nearby SOS alerts</string>
+    <string name="channel_general_name">General</string>
+    <string name="channel_general_description">General app notifications</string>
+    <string name="channel_location_name">Location Tracking</string>
+    <string name="channel_location_description">Background location updates</string>
+    <string name="notification_sos_title">🚨 SOS Alert!</string>
+    <string name="notification_sos_body">Someone nearby needs help!</string>
+    <string name="notification_helper_responding">A helper is responding to your SOS</string>
+    <string name="notification_helper_arrived">Helper has arrived at your location</string>
+    <string name="notification_tracking_title">SafeGuard Active</string>
+    <string name="notification_tracking_body">Tracking your location for safety</string>
+    <string name="channel_sos_active">Active SOS Alerts</string>
+    <string name="channel_sos_active_desc">Notifications for your active SOS alerts</string>
+    <string name="channel_sos_alerts">Nearby SOS Alerts</string>
+    <string name="channel_sos_alerts_desc">Receive alerts when someone nearby needs help</string>
+    <string name="channel_helper_updates">Helper Updates</string>
+    <string name="channel_helper_updates_desc">Updates about helpers responding to your alerts</string>
+    <string name="channel_location">Location Service</string>
+    <string name="channel_location_desc">Background location tracking notification</string>
+    <string name="channel_general">General</string>
+    <string name="channel_general_desc">General app notifications</string>
+    <string name="respond">Respond</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="stop">Stop</string>
+    <string name="sos_triggered_title">SOS Alert Triggered</string>
+    <string name="sos_triggered_text">Your emergency alert has been sent</string>
+    <string name="helper_responding_with_eta">%1$s is on the way (ETA: %2$s)</string>
+    <string name="helper_responding_no_eta">%s is on the way</string>
+    <string name="test_sos_notification_title">Test SOS Successful</string>
+    <string name="test_sos_notification_text">Your test alert was sent successfully</string>
+    <string name="recording_audio_desc">Emergency audio is being recorded</string>
+    <string name="sos_active_notification_title">SOS Active</string>
+    <string name="sos_active_notification_text">Your emergency alert is active. Tap to view status.</string>
+    <string name="location_channel_name">Location Updates</string>
+    <string name="location_channel_description">Used for background location tracking during emergencies</string>
+    <string name="location_tracking_active">Location Tracking Active</string>
+    <string name="location_tracking_description">Your location is being shared for safety</string>
+    <string name="sos_active_notification_big_text">Emergency alert is active. Trusted contacts and nearby helpers have been notified.</string>
+
+    <!-- ==================== ERRORS ==================== -->
+
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_timeout">Request timed out</string>
+    <string name="error_server">Server error. Please try later.</string>
+    <string name="error_unknown">Unknown error occurred</string>
+    <string name="error_invalid_phone">Please enter a valid phone number</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_invalid_password">Password must be at least 8 characters</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="error_invalid_aadhaar">Please enter a valid 12-digit Aadhaar number</string>
+    <string name="error_invalid_otp">Please enter a valid 6-digit OTP</string>
+    <string name="error_empty_field">This field is required</string>
+    <string name="error_invalid_name">Please enter a valid name</string>
+    <string name="error_login_failed">Login failed. Please check your credentials.</string>
+    <string name="error_register_failed">Registration failed. Please try again.</string>
+    <string name="error_phone_exists">This phone number is already registered</string>
+    <string name="error_email_exists">This email is already registered</string>
+    <string name="error_location_unavailable">Unable to get your location</string>
+    <string name="error_location_permission">Location permission is required</string>
+    <string name="error_gps_disabled">Please enable GPS</string>
+    <string name="error_sos_failed">Failed to send SOS. Please try again.</string>
+    <string name="error_no_contacts">Please add at least one emergency contact</string>
+
+    <!-- ==================== EMPTY STATES ==================== -->
+
+    <string name="empty_no_data">No data available</string>
+    <string name="empty_no_results">No results found</string>
+    <string name="empty_alerts">No active alerts nearby</string>
+    <string name="empty_history">No history yet</string>
+    <string name="empty_notifications">No notifications</string>
+
+    <!-- ==================== SUCCESS MESSAGES ==================== -->
+
+    <string name="success_saved">Saved successfully</string>
+    <string name="success_updated">Updated successfully</string>
+    <string name="success_deleted">Deleted successfully</string>
+    <string name="success_sent">Sent successfully</string>
+
+    <!-- ==================== TIME ==================== -->
+
+    <string name="just_now">Just now</string>
+    <string name="minutes_ago">%1$d minutes ago</string>
+    <string name="hours_ago">%1$d hours ago</string>
+    <string name="days_ago">%1$d days ago</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="today">Today</string>
+
+    <!-- ==================== DISTANCE ==================== -->
+
+    <string name="distance_meters">%1$d m</string>
+    <string name="distance_km">%1$.1f km</string>
+    <string name="eta_minutes">%1$d min</string>
+
+    <!-- ==================== WIDGET ==================== -->
+
+    <string name="widget_name">SOS Widget</string>
+    <string name="widget_description">Quick access to SOS button</string>
+    <string name="widget_tap_sos">Tap for SOS</string>
+
+    <!-- ==================== ACCESSIBILITY ==================== -->
+
+    <string name="cd_back_button">Go back</string>
+    <string name="cd_close_button">Close</string>
+    <string name="cd_menu_button">Open menu</string>
+    <string name="cd_sos_button">SOS emergency button</string>
+    <string name="cd_profile_picture">Profile picture</string>
+    <string name="cd_verification_badge">Verified badge</string>
+    <string name="cd_helper_marker">Helper location marker</string>
+    <string name="cd_sos_marker">SOS alert location</string>
+    <string name="cd_toggle_password">Toggle password visibility</string>
+    <string name="cd_loading">Loading</string>
+    <string name="cd_refresh">Refresh content</string>
+
+    <!-- Steps -->
+    <string name="step_2_of_4">Step 2 of 4</string>
+    <string name="step_3_of_4">Step 3 of 4</string>
+    <string name="step_4_of_4">Step 4 of 4</string>
+
+    <!-- Additional missing strings found in layouts or common -->
+    <string name="offline_mode">You\'re offline. Some features may be limited.</string>
+    <string name="view">VIEW</string>
+    <string name="navigation">Navigation</string>
+    <string name="alert_status_active_now">Active Now</string>
+    <string name="feature_send_sos">Send instant SOS alerts</string>
+    <string name="feature_manage_contacts">Manage emergency contacts</string>
+    <string name="feature_track_help">Track help arriving to you</string>
+    <string name="feature_receive_alerts">Receive nearby SOS alerts</string>
+    <string name="feature_navigate_victim">Navigate to victim\'s location</string>
+    <string name="feature_help_community">Help your local community</string>
+    <string name="feature_all_user_features">All Regular User features</string>
+    <string name="feature_all_helper_features">All Helper features</string>
+    <string name="feature_priority_support">Priority community support</string>
+    <string name="how_would_you_like_to_use">How would you like to use SafeGuard SOS?</string>
+
+    <string name="welcome_aboard">Welcome Aboard!</string>
+    <string name="account_created_successfully">Your account has been created successfully. You are now part of the SafeGuard community.</string>
+    <string name="feature_sos_ready">One-tap SOS is ready to use</string>
+    <string name="feature_identity_verified">Your identity is verified via Aadhaar</string>
+    <string name="feature_community_connected">Connected to nearby helpers</string>
+
+</resources>

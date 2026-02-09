@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    android:fitsSystemWindows="true">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:padding="@dimen/spacing_sm"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary" />
+
+    <!-- Step Indicator -->
+    <LinearLayout
+        android:id="@+id/step_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_completed" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_completed" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:background="@drawable/bg_step_active" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_step_inactive" />
+
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/accent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_indicator"
+        app:trackColor="@color/surface"
+        app:trackCornerRadius="2dp"
+        tools:visibility="visible" />
+
+    <!-- ScrollView -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/spacing_lg"
+            android:paddingTop="@dimen/spacing_xxl"
+            android:paddingBottom="@dimen/spacing_lg">
+
+            <!-- Aadhaar Icon -->
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_icon_container_blue_large">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_aadhaar"
+                    app:tint="@color/accent" />
+
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:gravity="center"
+                android:text="@string/aadhaar_verification_title"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_heading" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="@string/aadhaar_verification_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body" />
+
+            <!-- Aadhaar Input Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_tertiary"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Label -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/aadhaar_number"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body" />
+
+                    <!-- Input Field with Validation Icon -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_aadhaar_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/aadhaar_hint"
+                            app:boxBackgroundColor="@color/input_background"
+                            app:boxBackgroundMode="filled"
+                            app:boxCornerRadiusBottomEnd="@dimen/radius_medium"
+                            app:boxCornerRadiusBottomStart="@dimen/radius_medium"
+                            app:boxCornerRadiusTopEnd="@dimen/radius_medium"
+                            app:boxCornerRadiusTopStart="@dimen/radius_medium"
+                            app:boxStrokeColor="@color/accent"
+                            app:boxStrokeWidth="1dp"
+                            app:errorEnabled="true"
+                            app:errorTextColor="@color/error"
+                            app:hintTextColor="@color/text_tertiary"
+                            app:startIconDrawable="@drawable/ic_aadhaar"
+                            app:startIconTint="@color/text_tertiary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_aadhaar_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:letterSpacing="0.1"
+                                android:maxLength="14"
+                                android:paddingEnd="48dp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_input"
+                                tools:text="1234 5678 9012" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Validation Icon -->
+                        <ImageView
+                            android:id="@+id/iv_validation_icon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="@dimen/spacing_md"
+                            android:layout_marginBottom="@dimen/spacing_sm"
+                            android:contentDescription="@null"
+                            android:visibility="gone"
+                            tools:src="@drawable/ic_check_circle"
+                            tools:visibility="visible" />
+
+                    </FrameLayout>
+
+                    <!-- Character Count -->
+                    <TextView
+                        android:id="@+id/tv_char_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="end"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="@dimen/text_small"
+                        android:visibility="gone"
+                        tools:text="4/12"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Security Info Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                app:cardBackgroundColor="#1A00D9FF"
+                app:cardCornerRadius="@dimen/radius_medium"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_md">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_shield"
+                        app:tint="@color/accent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/aadhaar_privacy_note"
+                        android:textColor="@color/accent"
+                        android:textSize="@dimen/text_small" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Why Aadhaar Link -->
+            <TextView
+                android:id="@+id/tv_why_aadhaar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:fontFamily="@font/inter_medium"
+                android:padding="@dimen/spacing_sm"
+                android:text="@string/why_aadhaar"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_body" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Verify Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_verify_aadhaar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:alpha="0.5"
+                android:enabled="false"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/send_otp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_button"
+                app:backgroundTint="@color/accent"
+                app:cornerRadius="@dimen/radius_medium"
+                app:icon="@drawable/ic_shield_check"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/spacing_sm"
+                app:iconTint="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
